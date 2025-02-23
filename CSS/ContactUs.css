@@ -1,0 +1,42 @@
+.bg-yellowgreen
+{
+    background-color: yellowgreen;
+}
+.btn-color
+{
+    color:white;
+}
+.btn-color:hover
+{
+    background-color: green;
+    color: white;
+}
+.img
+{
+    width: 15%;
+    height: 15%;
+}
+.navbarbg
+{
+    background-image: url(../Images/grass.avif);
+    color:white;
+}
+
+.nav-Anchor>a
+{
+    color:white;
+}
+.nav-Anchor>a:hover
+{
+    color:wheat;
+}
+
+.green-bg
+{
+    background-color: grey;
+}
+.slide
+{
+    width: 30%;
+    height: 20%;
+}
