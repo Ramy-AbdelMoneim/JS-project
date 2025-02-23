@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  background-color: #fffffff0;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+.main-desc {
+  padding: 2rem 0;
+  margin: 0;
+  background-image: url(../Images/about-us-background.jpg);
+  background-size: cover;
+}
+header {
+  /* padding: 0 ; */
+  margin-bottom: auto;
+  background-color: yellowgreen;
+}
+.main-desc .container {
+  max-width: 100% !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+.about-us-welcome {
+  background-color: rgba(130, 160, 60, 0.18);
+}
+.about-us-welcome h1,
+.about-us-welcome p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #eff5ff !important;
+  text-shadow: 0.03rem 0.03rem 1rem rgb(83, 83, 83);
+}
+.about-us-welcome p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+#carouselDemo {
+  padding: 0% !important;
+}
+.carousel-inner {
+  margin: 0;
+  padding: 0;
+}
+.carousel-item {
+  position: relative;
+  display: none;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform 0.8s ease-in-out;
+}
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+@media (min-width: 360px) {
+  .carousel-item img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.carousel-item {
+  /* transition: transform 0.6s ease-in-out; */
+}
+/* .carousel-inner {
+  overflow: hidden;
+  position: relative;
+} */
+.two-col li::before {
+  content: "";
+  position: absolute;
+  width: 0.2rem !important;
+  height: 0.2rem !important;
+  top: 50%;
+  left: -0.5rem;
+  /* border-radius: 50%; */
+  border: 0.2rem solid rgb(100, 134, 33);
+}
+.two-col li {
+  position: relative;
+  display: inline-block;
+  width: 45%;
+  padding: 0.1rem 0;
+  padding-left: 0.2rem;
+  margin: 0.3rem 0.5rem;
+  /* border-bottom: 0.06rem solid rgb(100, 134, 33); */
+}
