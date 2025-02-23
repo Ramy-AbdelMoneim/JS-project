@@ -44,3 +44,28 @@ input[type="email"]:invalid+div
     display:block;
     color:brown;
 }
+.btncolor:hover
+{
+    background-color: green;
+    color: white;
+}
+
+.navbarbg
+{
+    background-image: url(../Images/grass.avif);
+    color:white;
+}
+
+.nav-Anchor>a
+{
+    color:white;
+}
+.nav-Anchor>a:hover
+{
+    color:wheat;
+}
+
+.green-bg
+{
+    background-color: grey;
+}
