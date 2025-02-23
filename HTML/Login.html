@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../BS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/loginStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&family=Sancreek&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="h-100 w-100">
+    <div class="container">
+        <div class="row col-12">
+
+            <h1 class="fontColor">Field Booking</h1>
+        </div>
+        <div class="header2ndfont fs-2">Anywhere anytime</div>
+
+
+        <div class="row">
+            <form class=" col-4 form-container" id="loginForm" action="./Register.html">
+                <div class="mb-3">
+                    <label for="InputEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"  required>
+                </div>
+                <div class="mb-3">
+                    <label for="InputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="InputPassword" required>
+                </div>
+                <div class="mb-3 form-text">
+                    <div id="emailHelp" class="form-text">If you don't have an account, <a href="./Register.html">Register now</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btncolor" id="Login">Login</button>
+            </form>
+        </div>
+    </div> 
+    <script src="../Scripts/LoginScript.js"></script>
+</body>
+
+</html>

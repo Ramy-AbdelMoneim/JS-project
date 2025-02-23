@@ -1,0 +1,46 @@
+@keyframes form {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 70%);
+        opacity: 1;
+    }
+}
+
+#loginForm {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    animation: form 2.5s ease-out forwards;
+}
+.fontColor
+{
+    color: yellowgreen;
+}
+.header2ndfont
+{
+    position: relative;
+    top: -1em;
+    font-family: "Imperial Script", serif;
+
+}
+.btncolor
+{
+    background-color: yellowgreen;
+    color: white;
+
+}
+input[type="email"]:valid+div
+{
+    display: none;
+    
+}
+input[type="email"]:invalid+div
+{
+    display:block;
+    color:brown;
+}

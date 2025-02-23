@@ -1,0 +1,28 @@
+{
+    "ramy@gmail.com" :
+		{
+            "username": "Ramy",
+			"Email" : "Ramy@gmail.com",
+			"Password" : "123"
+        },
+	"kero@gmail.com" : 
+		{
+            "username": "Kero",
+			"Email" : "Kero@gmail.com",
+			"Password" : "123"
+        }
+	,
+	"friga@gmail.com" : 
+		{
+            "username": "Omar",
+			"Email" : "Friga@gmail.com",
+			"Password" : "123"
+		}
+	,
+	"john@gmail.com" :
+		{
+            "username": "John",
+			"Email" : "John@gmail.com",
+			"Password" : "123"
+		}
+}
