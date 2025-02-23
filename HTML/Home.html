@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Booking</title>
+    <link href="../BS/bootstrap.css" rel="stylesheet" />
+    <style>
+      .bg-yellowgreen {
+        background-color: yellowgreen;
+      }
+
+      .bg-lowopacity {
+        background-color: rgba(255, 255, 255, 0.596);
+      }
+      .text_word::before {
+        position: absolute;
+        height: 7px;
+        background-color: rgba(169, 247, 135, 0.649);
+        border-radius: 5px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+      }
+      .imgtop {
+        border-radius: 250px !important; 
+        position: absolute;
+        top: 0;
+        transition: opacity 2.5s ease-in-out;
+      }
+      .ztop {
+        z-index: 1;
+      }
+      .intro-wrap {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .change{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top:1rem;
+        background-color:  yellowgreen;
+        z-index: 0;
+      }
+      .none-work{
+        opacity: 0;
+        z-index: -1;
+      }
+      .work{
+        opacity: 1;
+        z-index: 1;
+      }
+      #cursor {
+        animation: blink 0.9s infinite;
+      }
+      @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      .btn-primary{
+          background-color: chartreuse;
+          border-color: chartreuse;
+      }
+      .btn{
+          padding-top: 12px;
+          padding-bottom: 12px;
+          padding-left: 30px;
+          padding-right: 30px;
+          border-radius: 30px;
+          font-size: 14px;
+      }
+
+
+      .form{
+          position: relative;
+          -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+          z-index: 9;
+          padding: 30px;
+          background: #fffffff0;
+      } 
+    </style>
+  </head>
+  <body>
+    <div class="bg-yellowgreen" style="width: 100%">
+      <div class="container">
+        <div class="row flex-row d-flex justify-content-evenly w-100 col-12">
+          <div class="col-2 p-3 m-2 d-flex justify-content-start l-0">
+            <h1>logo</h1>
+          </div>
+          <div class="col-9 d-flex justify-content-end">
+            <nav class="navbar border-body" data-bs-theme="white">
+              <div class="container-fluid d-flex justify-content-end">
+                <div
+                  class="d-flex d-none d-md-block w-100"
+                  id="navbarNavDropdown"
+                >
+                  <ul class="navbar-nav d-flex flex-row gap-5">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login/Singup</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button
+                class="navbar-toggler d-block d-md-none"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="offcanvas offcanvas-end bg-lowopacity w-50"
+                tabindex="-1"
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    logo
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login / Singup</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div class="row d-flex intro-wrap position-relative">
+          <div class="position-relative">
+            <!-- <div
+              class="imgtop col-5 shadow justify-content-center end-0 top-0 mx-5 mb-5 position-absolute carousel slide"
+              data-bs-ride="carousel"
+              id="carouselExampleAutoplaying"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="img-fluid imgtop " src="./01.jpeg" />
+                </div>
+                <div class="carousel-item">
+
+                  <img class="img-fluid imgtop" src="./02.jpg" />
+                </div>
+                <div class="carousel-item">
+
+                  <img class="img-fluid imgtop" src="./03.jpg" />
+                </div>
+                <div class="carousel-item">
+
+                  <img class="img-fluid imgtop" src="./04.jpg" />
+                </div>
+
+                
+              </div> -->
+              <div class="imgtop col-5 shadow justify-content-center end-0 top-0 mx-5 mb-5 position-absolute">
+                <div class="position-relative change">
+                  <img class="img-fluid imgtop  work" src="../Images/01.jpg"  />
+                  <img class="img-fluid imgtop none-work" src="../Images/02.jpg"  />
+                  <img class="img-fluid imgtop none-work" src="../Images/03.jpg"  />
+                  <img class="img-fluid imgtop none-work" src="../Images/04.jpg"  />
+                </div>
+              </div>
+            </div>
+            <div class="position-relative">
+              <h1 class="col-8">
+                <span class="d-block">Let's Enjoy Your Trip In Football </span>
+                Fields of
+                <span class="position-relative text_word pb-2" id="words"></span
+                ><span class="fs-1" id="cursor">|</span>
+              </h1>
+              <div class="row">
+                <div class="col-7 mt-5 shadow-3">
+                                <!-- Form -->
+                  <form class="form">
+                    <div class="row mb-6">
+                        <!-- First Form Group -->
+                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                            <select name="" id="" class="form-control custom-select">
+                                <option value="">Cairo</option>
+                                <option value="">ALex</option>
+                                <option value="">Aswan</option>
+                                <option value="">Elfayom</option>
+                                <option value="">Mansora</option>
+                                <option value="">Tanta</option>
+                                <option value="">Damnhour</option>
+                            </select>
+                        </div>
+                        <!-- Second Form Group -->
+                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                            <input type="date" class="form-control">
+                        </div>
+                        <!-- Third Form Group -->
+                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+                            <input type="text" class="form-control" placeholder="# of People">
+                        </div>
+
+                    </div>    
+                        <!-- Forth Form Group -->
+                    <div class="row align-items-center">
+                        <div class="col12 col-md-6 mb-3 mb-lg-0 mt-3 col-lg-4 ">
+                            <input type="submit" class="btn btn-primary btn-block fs-5 col-12 " value="Search">
+                        </div>
+                    </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../BS/bootstrap.bundle.js"></script>
+    <script src="../Scripts/Home.js"></script>
+  </body>
+</html>
