@@ -3,6 +3,9 @@
   margin: 0%;
   padding: 0%;
 }
+body {
+  overflow-x: hidden;
+}
 /* body {
   background-color: #fffffff0;
   width: 100%;
@@ -52,7 +55,7 @@ header {
 }
 section {
   padding: 3rem 0%;
-  background-color: rgba(27, 27, 27, 0.01);
+  background-color: rgba(27, 27, 27, 0.03);
   margin-top: 6rem;
 }
 .section-header {
