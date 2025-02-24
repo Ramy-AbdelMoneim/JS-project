@@ -3,28 +3,26 @@
   margin: 0%;
   padding: 0%;
 }
-body {
+/* body {
   background-color: #fffffff0;
   width: 100%;
   padding: 0%;
   margin: 0%;
   overflow-x: hidden;
-  background-image: linear-gradient(
-      rgba(20, 80, 40, 0.7),
-      rgba(255, 255, 255, 0.7)
-    ),
+  background-color: #eff5ff;
+  background-image: linear-gradient(rgba(20, 80, 40, 1), rgba(255, 255, 255, 1)),
     url(../Images/about-us-background.jpg);
   background-size: contain;
-}
+} */
 header {
-  /* padding: 0 ; */
+  background-image: url(../Images/about-us-background.jpg);
+  background-size: cover;
   margin-bottom: auto;
 }
 .header-nav {
   box-sizing: border-box;
   margin-right: 0%;
   margin-left: 0%;
-  /* background-color: rgb(20, 20, 20); */
 }
 .header-nav * {
   color: #eff5ff !important;
@@ -37,14 +35,7 @@ header {
     rgba(255, 255, 255, 0.5)
     ),
     url(../Images/about-us-background.jpg); */
-  background-image: url(../Images/about-us-background.jpg);
-  background-size: cover;
 }
-/* .main-desc .container {
-  max-width: 100% !important;
-  padding-left: 0;
-  padding-right: 0;
-} */
 .about-us-welcome {
   background-color: rgba(20, 80, 40, 0.4);
   border-radius: 2rem;
@@ -60,7 +51,9 @@ header {
   font-weight: 500;
 }
 section {
-  margin-top: 5rem;
+  padding: 3rem 0%;
+  background-color: rgba(27, 27, 27, 0.01);
+  margin-top: 6rem;
 }
 .section-header {
   padding: 0%;
@@ -110,15 +103,7 @@ section {
   font-size: 1.5rem;
   color: rgb(10, 10, 10);
 }
-/*
-.carousel-item {
-  transition: transform 0.6s ease-in-out; 
-}
-*/
-/* .carousel-inner {
-  overflow: hidden;
-  position: relative;
-  } */
+
 .two-col li::before {
   content: "";
   position: absolute;
@@ -126,8 +111,8 @@ section {
   height: 0.2rem !important;
   top: 50%;
   left: -0.5rem;
-  /* border-radius: 50%; */
-  border: 0.2rem solid rgb(100, 134, 33);
+  border-radius: 50%;
+  border: 0.2rem solid rgb(30, 40, 40);
 }
 .two-col li {
   position: relative;
@@ -148,7 +133,6 @@ section {
 .member-container img {
   aspect-ratio: 1/1 !important;
 }
-
 @media (min-width: 360px) {
   .carousel-item img {
     aspect-ratio: 16/9;
