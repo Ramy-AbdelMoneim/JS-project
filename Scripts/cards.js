@@ -1,3 +1,33 @@
+function addButtonsListeners() {
+  //search button
+  const searchBtn = document.getElementById("search-btn");
+  searchBtn.addEventListener("onclick", search);
+}
+function search() {
+  const noPeople = document.getElementById("no-people");
+  const dateSearch = document.getElementById("date-search");
+  const citySelection = document.getElementById("city-selection");
+  const fetchedData = [];
+  fetch("../JSON/Fields.json")
+    .then((response) => response.json())
+    .then((data) => {
+      fetchedData = data;
+      diplayCards(fetchedData);
+    });
+}
+function diplayCards(data) {
+  const cardStyleClasess = [];
+  const container = document.getElementById("card-container");
+  const card = document.createElement("div");
+  for (const className in cardStyleClasess) {
+    if (Object.prototype.hasOwnProperty.call(cardStyleClasess, className)) {
+      card.classList.add(className);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", addButtonsListeners);
+//? json example
 // {
 //   "name": "",
 //   "city": "Cairo",
@@ -21,4 +51,3 @@
 //   },
 //   "phoneNumber": "010"
 // },
-//? json example
