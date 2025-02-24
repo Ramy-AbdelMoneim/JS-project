@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="../BS/bootstrap.css" />
+    <link rel="stylesheet" href="../BS/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="../CSS/all.min.css" />
+    <link rel="stylesheet" href="../CSS/about.css" />
+  </head>
+  <body>
+    <header>
+      <div class="row flex-row d-flex justify-content-evenly w-100 header-nav">
+        <div class="col-2 p-3 d-flex justify-content-start l-0 navbar">
+          <h1>logo</h1>
+        </div>
+        <div class="col-9 d-flex justify-content-end">
+          <nav class="navbar border-body" data-bs-theme="white">
+            <div class="container-fluid d-flex justify-content-end">
+              <div
+                class="d-flex d-none d-md-block w-100"
+                id="navbarNavDropdown"
+              >
+                <ul class="navbar-nav d-flex flex-row gap-5">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./Home.html"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Login/Singup</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button
+              class="navbar-toggler d-block d-md-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end bg-lowopacity w-50"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">logo</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Login / Singup</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="container-fluid main-desc">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mx-auto text-center">
+            <div class="intro-wrap">
+              <div class="mb-0 about-us-welcome">
+                <h1>About Us</h1>
+                <p class="">
+                  Welcome to Field Booking, your go-to platform for seamless
+                  field training booking and management!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="about-field">
+      <div class="container">
+        <div class="row">
+          <div
+            id="carouselDemo"
+            class="col-lg-7 pe-lg-0 carousel slide"
+            data-bs-wrap="true"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselDemo"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselDemo"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselDemo"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselDemo"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselDemo"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <img
+                  class="w-100"
+                  src="../Images/about-slide-1-2.jpg"
+                  alt="Slide 1"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  class="w-100"
+                  src="../Images/about-slide-1-3.jpg"
+                  alt="Slide 2"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  class="w-100"
+                  src="../Images/about-slide-1-4.jpg"
+                  alt="Slide 3"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  class="w-100"
+                  src="../Images/about-slide-1-5.jpg"
+                  alt="Slide 4"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  class="w-100"
+                  src="../Images/about-slide-1-6.jpg"
+                  alt="Slide 5"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselDemo"
+              data-bs-slide="prev"
+            >
+              <!-- class="carousel-control-prev-icon"
+            aria-hidden="true" -->
+              <span><i class="fa-solid fa-caret-left"></i></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselDemo"
+              data-bs-slide="next"
+            >
+              <!-- class="carousel-control-next-icon"
+            aria-hidden="true" -->
+              <span><i class="fa-solid fa-caret-right"></i></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- end of carousel slide -->
+          <div class="col-lg-5 ml-auto">
+            <h2 class="section-title mb-4 section-header">
+              About Field Booking
+            </h2>
+            <p class="text-start">
+              Field Booking is a simple and efficient platform designed for
+              football lovers to find and book football fields easily. Whether
+              you're organizing a casual match with friends or a competitive
+              game, our app helps you reserve a field quickly with just a few
+              clicks.
+            </p>
+            <ul class="list-unstyled two-col clearfix">
+              <li>Easy Field Reservations</li>
+              <li>Flexible Scheduling</li>
+              <li>Location-Based Search</li>
+              <li>Affordable Pricing</li>
+              <li>Team & Player Management</li>
+            </ul>
+            <!-- end of About Field Booking -->
+          </div>
+        </div>
+      </div>
+      <!-- end of About Field booking section -->
+    </section>
+    <section class="team">
+      <div class="container">
+        <div class="team-desc text-center col-md-6 mx-auto mb-4">
+          <h2 class="row justify-content-center section-header-rel">Team</h2>
+          <p class="text-center">
+            Beyond the hassle of calls and unavailable fields, Field Booking
+            offers a seamless way to book football fields anytime, anywhere.
+            With just a few taps, secure your spot, gather your team, and enjoy
+            the game-effortless and hassle-free!
+          </p>
+        </div>
+        <div class="team-members container col-12">
+          <div class="row">
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQFcL1AAs0Jp5Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721233697285?e=1746057600&v=beta&t=Onyv-Qy8eXKJf12kRiY25d-71Yf7_EcMhoKSG_erm0w"
+                  alt="Ramy Elbasha"
+                />
+              </div>
+              <div class="ps-1">
+                <h3 class="member-name m-0">Ramy Elbasha</h3>
+                <p class="member-tilte">Software Engineer</p>
+              </div>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQH2p58Y06rGTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1733155228348?e=1746057600&v=beta&t=jE94UcIxn6WNf8lGafkPXxsX96_FoFctFEOOpgSB9oE"
+                  alt="Omar Friga"
+                />
+              </div>
+              <div class="ps-1">
+                <h3 class="member-name m-0">Omar Friga</h3>
+                <p class="member-tilte">Software Engineer</p>
+              </div>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQFEEs4TIR82CA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719790013572?e=1746057600&v=beta&t=csTGbV9UA3Qw_yT7Md8WOAdTBBcEmocsmhrskzWieEU"
+                  alt="Kerolos Ibrahim"
+                />
+              </div>
+              <div class="ps-1">
+                <h3 class="member-name m-0">Kerolos Ibrahim</h3>
+                <p class="member-tilte">Software Engineer</p>
+              </div>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D5603AQFyNkI5hXD_PQ/profile-displayphoto-shrink_800_800/B56ZU0ontBHEAg-/0/1740344819797?e=1746057600&v=beta&t=-3tIwLHv7eMJOm-OSGQ1Wx_jPJMZAdWElHMJEbeN_5E"
+                  alt="John Lamei"
+                />
+              </div>
+              <div class="ps-1">
+                <h3 class="member-name m-0">John Lamei</h3>
+                <p class="member-tilte">Software Engineer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../Scripts/all.min.js"></script>
+    <script src="../BS/bootstrap.bundle.js"></script>
+  </body>
+</html>
