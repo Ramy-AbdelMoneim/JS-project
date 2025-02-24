@@ -101,6 +101,17 @@ section {
   height: 0.6rem;
   margin: 0% 0.7rem;
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .fa-caret-right,
 .fa-caret-left {
   font-size: 1.5rem;
