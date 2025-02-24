@@ -11,8 +11,8 @@
   </head>
   <body>
     <header>
-      <div class="row flex-row d-flex justify-content-evenly w-100 col-12">
-        <div class="col-2 p-3 d-flex justify-content-start l-0">
+      <div class="row flex-row d-flex justify-content-evenly w-100 header-nav">
+        <div class="col-2 p-3 d-flex justify-content-start l-0 navbar">
           <h1>logo</h1>
         </div>
         <div class="col-9 d-flex justify-content-end">
@@ -100,7 +100,7 @@
         </div>
       </div>
     </header>
-    <section class="about-field m-4">
+    <section class="about-field">
       <div class="container">
         <div class="row">
           <div
@@ -186,10 +186,9 @@
               data-bs-target="#carouselDemo"
               data-bs-slide="prev"
             >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
+              <!-- class="carousel-control-prev-icon"
+            aria-hidden="true" -->
+              <span><i class="fa-solid fa-caret-left"></i></span>
               <span class="visually-hidden">Previous</span>
             </button>
             <button
@@ -198,16 +197,18 @@
               data-bs-target="#carouselDemo"
               data-bs-slide="next"
             >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+              <!-- class="carousel-control-next-icon"
+            aria-hidden="true" -->
+              <span><i class="fa-solid fa-caret-right"></i></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          <!-- end of carousel slide -->
           <div class="col-lg-5 ml-auto">
-            <h2 class="section-title mb-4">About Field Booking</h2>
-            <p>
+            <h2 class="section-title mb-4 section-header">
+              About Field Booking
+            </h2>
+            <p class="text-start">
               Field Booking is a simple and efficient platform designed for
               football lovers to find and book football fields easily. Whether
               you're organizing a casual match with friends or a competitive
@@ -221,6 +222,73 @@
               <li>Affordable Pricing</li>
               <li>Team & Player Management</li>
             </ul>
+            <!-- end of About Field Booking -->
+          </div>
+        </div>
+      </div>
+      <!-- end of About Field booking section -->
+    </section>
+    <section class="team">
+      <div class="container">
+        <div class="team-desc text-center">
+          <h2 class="row justify-content-center section-header-rel">Team</h2>
+          <p class="text-center">
+            Beyond the hassle of calls and unavailable fields, Field Booking
+            offers a seamless way to book football fields anytime, anywhere.
+            With just a few taps, secure your spot, gather your team, and enjoy
+            the game-effortless and hassle-free!
+          </p>
+        </div>
+        <div class="team-members container col-12">
+          <div class="row">
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQFcL1AAs0Jp5Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721233697285?e=1746057600&v=beta&t=Onyv-Qy8eXKJf12kRiY25d-71Yf7_EcMhoKSG_erm0w"
+                  alt="Ramy Elbasha"
+                />
+              </div>
+
+              <h3 class="member-name m-0">Ramy Elbasha</h3>
+              <p class="member-tilte">Software Engineer</p>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQH2p58Y06rGTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1733155228348?e=1746057600&v=beta&t=jE94UcIxn6WNf8lGafkPXxsX96_FoFctFEOOpgSB9oE"
+                  alt="Omar Friga"
+                />
+              </div>
+
+              <h3 class="member-name m-0">Omar Friga</h3>
+              <p class="member-tilte">Software Engineer</p>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQFEEs4TIR82CA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719790013572?e=1746057600&v=beta&t=csTGbV9UA3Qw_yT7Md8WOAdTBBcEmocsmhrskzWieEU"
+                  alt="Kerolos Ibrahim"
+                />
+              </div>
+
+              <h3 class="member-name m-0">Kerolos Ibrahim</h3>
+              <p class="member-tilte">Software Engineer</p>
+            </div>
+            <div class="member-container col-lg-3">
+              <div class="img-fluid mb-4">
+                <img
+                  class="rounded-3"
+                  src="https://media.licdn.com/dms/image/v2/D5603AQFyNkI5hXD_PQ/profile-displayphoto-shrink_800_800/B56ZU0ontBHEAg-/0/1740344819797?e=1746057600&v=beta&t=-3tIwLHv7eMJOm-OSGQ1Wx_jPJMZAdWElHMJEbeN_5E"
+                  alt="John Lamei"
+                />
+              </div>
+
+              <h3 class="member-name m-0">John Lamei</h3>
+              <p class="member-tilte">Software Engineer</p>
+            </div>
           </div>
         </div>
       </div>
