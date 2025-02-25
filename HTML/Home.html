@@ -82,6 +82,109 @@
           padding: 30px;
           background: #fffffff0;
       } 
+      .section1 {
+    position: relative;
+    padding-bottom: 20px;
+    display: inline-block; 
+}
+
+.section1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: #1A374D; 
+}
+
+.section1.text-center:before {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); 
+}
+
+.feature-1-wrap {
+    position: relative; 
+}
+  
+.feature-1 {
+padding: 30px;
+background: rgba(26, 55, 77, 0.05);
+border-radius: 20px;
+min-height: calc(50% - 15px);
+top: 0;
+margin-bottom: 30px !important; 
+}
+
+@media (max-width: 991.98px) {
+    .feature-1 {
+    display: block !important; 
+    } 
+}
+
+.feature-1 h3 {
+    font-size: 1.2rem;
+    font-weight: 700; 
+}
+
+
+/* Footer Styles */
+.footer-48201 {
+    background-color: #343a40; /* Dark background */
+    color: white;
+    padding: 50px 0;
+}
+
+/* Make headers green */
+.footer-48201 h3 {
+    color: #28a745; /* Football green */
+}
+
+/* Style for links */
+.footer-48201 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 a:hover {
+    color: #28a745; /* Green hover effect */
+}
+
+/* Social Icons */
+.footer-48201 .social a {
+    color: white; /* Default color */
+    font-size: 18px;
+    margin-right: 10px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 .social a:hover {
+    color: #28a745; /* Green on hover */
+}
+
+/* Footer links */
+.footer-48201 .list-unstyled li {
+    margin-bottom: 8px;
+}
+
+.footer-48201 .list-unstyled a {
+    font-size: 16px;
+}
+
+/* Centering the copyright text */
+.footer-48201 .text-center p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+
+  
     </style>
   </head>
   <body>
@@ -167,87 +270,63 @@
         </div>
 
         <div class="row d-flex intro-wrap position-relative">
-          <div class="position-relative">
-            <!-- <div
-              class="imgtop col-5 shadow justify-content-center end-0 top-0 mx-5 mb-5 position-absolute carousel slide"
-              data-bs-ride="carousel"
-              id="carouselExampleAutoplaying"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="img-fluid imgtop " src="./01.jpeg" />
-                </div>
-                <div class="carousel-item">
-
-                  <img class="img-fluid imgtop" src="./02.jpg" />
-                </div>
-                <div class="carousel-item">
-
-                  <img class="img-fluid imgtop" src="./03.jpg" />
-                </div>
-                <div class="carousel-item">
-
-                  <img class="img-fluid imgtop" src="./04.jpg" />
-                </div>
-
-                
-              </div> -->
+          <div class="position-relative d-none d-md-block"> 
+              <!-- Images: Hidden on Small Screens -->
               <div class="imgtop col-5 shadow justify-content-center end-0 top-0 mx-5 mb-5 position-absolute">
-                <div class="position-relative change">
-                  <img class="img-fluid imgtop  work" src="../Images/01.jpg"  />
-                  <img class="img-fluid imgtop none-work" src="../Images/02.jpg"  />
-                  <img class="img-fluid imgtop none-work" src="../Images/03.jpg"  />
-                  <img class="img-fluid imgtop none-work" src="../Images/04.jpg"  />
-                </div>
+                  <div class="position-relative change">
+                      <img class="img-fluid imgtop work" src="../Images/about-slide-1-1.jpg" />
+                      <img class="img-fluid imgtop none-work" src="../Images/f-1.webp" />
+                      <img class="img-fluid imgtop none-work" src="../Images/bbe92e1256715af5712ee282212d6ae8_high.webp" />
+                      <img class="img-fluid imgtop none-work" src="../Images/F-3.webp" />
+                  </div>
               </div>
-            </div>
-            <div class="position-relative">
+          </div>
+          
+          <div class="position-relative">
               <h1 class="col-8">
-                <span class="d-block">Let's Enjoy Your Trip In Football </span>
-                Fields of
-                <span class="position-relative text_word pb-2" id="words"></span
-                ><span class="fs-1" id="cursor">|</span>
+                  <span class="d-block">Let's Enjoy Your Trip In Football </span>
+                  Fields of
+                  <span class="position-relative text_word pb-2" id="words"></span>
+                  <span class="fs-1" id="cursor">|</span>
               </h1>
               <div class="row">
-                <div class="col-7 mt-5 shadow-3">
-                                <!-- Form -->
-                  <form class="form">
-                    <div class="row mb-6">
-                        <!-- First Form Group -->
-                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <select name="" id="" class="form-control custom-select">
-                                <option value="">Cairo</option>
-                                <option value="">ALex</option>
-                                <option value="">Aswan</option>
-                                <option value="">Elfayom</option>
-                                <option value="">Mansora</option>
-                                <option value="">Tanta</option>
-                                <option value="">Damnhour</option>
-                            </select>
-                        </div>
-                        <!-- Second Form Group -->
-                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                            <input type="date" class="form-control">
-                        </div>
-                        <!-- Third Form Group -->
-                        <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                            <input type="text" class="form-control" placeholder="# of People">
-                        </div>
-
-                    </div>    
-                        <!-- Forth Form Group -->
-                    <div class="row align-items-center">
-                        <div class="col12 col-md-6 mb-3 mb-lg-0 mt-3 col-lg-4 ">
-                            <input type="submit" class="btn btn-primary btn-block fs-5 col-12 " value="Search">
-                        </div>
-                    </div>
-                </form>
-                </div>
+                  <div class="col-7 mt-5 shadow-3">
+                      <!-- Form -->
+                      <form class="form">
+                          <div class="row mb-6">
+                              <!-- First Form Group -->
+                              <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                                  <select name="" id="" class="form-control custom-select">
+                                      <option value="">Cairo</option>
+                                      <option value="">ALex</option>
+                                      <option value="">Aswan</option>
+                                      <option value="">Elfayom</option>
+                                      <option value="">Mansora</option>
+                                      <option value="">Tanta</option>
+                                      <option value="">Damnhour</option>
+                                  </select>
+                              </div>
+                              <!-- Second Form Group -->
+                              <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                                  <input type="date" class="form-control">
+                              </div>
+                              <!-- Third Form Group -->
+                              <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+                                  <input type="text" class="form-control" placeholder="# of People">
+                              </div>
+                          </div>    
+                          <!-- Forth Form Group -->
+                          <div class="row align-items-center">
+                              <div class="col-12 col-md-6 mb-3 mb-lg-0 mt-3 col-lg-4">
+                                  <input type="submit" class="btn btn-primary btn-block fs-5 col-12" value="Search">
+                              </div>
+                          </div>
+                      </form>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
+      
 
       <div class="container">
         <h1>Our Products</h1>
@@ -274,6 +353,160 @@
           </div>
         </div>
     </div>
+
+
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+          <div class="col-lg-6 text-center">
+              <h2 class="section1 text-center mb-3">Our Services</h2>
+              <p>Far, far away, beyond the noise of the busy streets, lies a place
+                   where passion meets the pitch. A land where every pass, every goal,
+                    and every cheer echoes under the open sky. Away from the everyday rush,
+                     in the heart of the game, your perfect football field awaits.
+                     Book your spot, gather your team, and let the game begin</p>
+          </div>
+      </div>
+      <div class="row align-items-stretch">
+          <div class="col-lg-4 order-lg-1">
+              <div class="h-100"><div class="frame h-100"><div class="feature-img-bg h-100" style="background-image: url('../Images/DALL·E\ 2025-02-21\ 19.04.40\ -\ A\ high-quality\ football\ field\ image\ designed\ for\ website\ backgrounds\,\ with\ a\ balanced\ aspect\ ratio\ \(not\ too\ wide\ or\ too\ tall\).\ The\ field\ is\ beautifull.webp');">
+              </div>
+          </div>
+      </div>
+  </div>
+  
+          <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1" >
+  
+              <div class="feature-1 d-md-flex">
+                  <div class="align-self-center">
+                      <span class="flaticon-house display-4 text-primary"></span>
+                      <h3>Beautiful Condo</h3>
+                      <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+                  </div>
+              </div>
+  
+              <div class="feature-1 ">
+                  <div class="align-self-center">
+                      <span class="flaticon-restaurant display-4 text-primary"></span>
+                      <h3>Restaurants & Cafe</h3>
+                      <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+                  </div>
+              </div>
+  
+          </div>
+  
+          <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3" >
+  
+              <div class="feature-1 d-md-flex">
+                  <div class="align-self-center">
+                      <span class="flaticon-mail display-4 text-primary"></span>
+                      <h3>Easy to Connect</h3>
+                      <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+                  </div>
+              </div>
+  
+              <div class="feature-1 d-md-flex">
+                  <div class="align-self-center">
+                      <span class="flaticon-phone-call display-4 text-primary"></span>
+                      <h3>24/7 Support</h3>
+                      <p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+                  </div>
+              </div>
+  
+          </div>
+  
+      </div>
+  </div>
+  </div>
+  
+  <div class="untree_co-section count-numbers py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap">
+                  <div class="counter">
+                      <span class="" data-number="9313">0</span>
+                  </div>
+                  <span class="caption">No. of Travels</span>
+              </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap">
+                  <div class="counter">
+                      <span class="" data-number="8492">0</span>
+                  </div>
+                  <span class="caption">No. of Clients</span>
+              </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap">
+                  <div class="counter">
+                      <span class="" data-number="100">0</span>
+                  </div>
+                  <span class="caption">No. of Employees</span>
+              </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+              <div class="counter-wrap">
+                  <div class="counter">
+                      <span class="" data-number="120">0</span>
+                  </div>
+                  <span class="caption">No. of Countries</span>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+
+  <footer class="footer-48201 bg-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <!-- About Section -->
+        <div class="col-md-4 pr-md-5">
+          <h3>About Tour</h3>
+          <p>Across the green fields, beyond the roaring crowds, far from the ordinary, lies the perfect pitch where every game begins and every player shines." ⚽🏆</p>
+          <p class="social">
+            <a href="#" class="p-2"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="p-2"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="p-2"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="p-2"><i class="fa-brands fa-linkedin"></i></a>
+          </p>
+        </div>
+        <!-- Pages Section -->
+        <div class="col-md">
+          <h3>Pages</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Resources Section -->
+        <div class="col-md">
+          <h3>Resources</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Contact Section -->
+        <div class="col-md">
+          <h3>Contact</h3>
+          <ul class="list-unstyled">
+            <li><a href="mailto:mail@example.com">mail@example.com</a></li>
+            <li><a href="tel:+12222123819">+1 222 212 3819</a></li>
+            <li><span>43 Raymouth Rd. Baltemoer, London 3910</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p>&copy; 2025. All Rights Reserved. — Designed with love by <a href="https://untree.co" target="_blank">ITI</a> Distributed By <a href="https://themewagon.com" target="_blank">Football Team</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
     <script src="script.js"></script>
 
 
