@@ -2,15 +2,7 @@
 
 let formsubmit = document.forms[0];
 let cookies = [];
-
-function getcookies() {
-    let allcookies = document.cookie.split(';');
-    for (let i = 0; i < allcookies.length; i++) {
-        var [key, value] = allcookies[i].split('=');
-        cookies[key] = value;
-    }
-    return cookies;
-}
+let usrname;
 formsubmit.onsubmit = function (event) {
     event.preventDefault();
     let Mail = document.getElementById("InputEmail").value;
@@ -29,6 +21,7 @@ formsubmit.onsubmit = function (event) {
             if (Mail == i && Password == usersdata[i].Password) {
                 // console.log("Login Successful")
                 document.cookie = `usrname=${usersdata[i].username}`
+                usrname = usersdata[i].username;
                 login = true;
                 break;
             }
@@ -37,8 +30,8 @@ formsubmit.onsubmit = function (event) {
             alert("Invalid Email or Password")
         }
         else {
-            getcookies();
-            alert(`Welcome back, ${cookies.usrname}`)
+            // getcookies();
+            alert(`Welcome back, ${usrname}`)
             formsubmit.submit();
         }
 

@@ -23,7 +23,7 @@
                 class="d-flex d-none d-md-block w-100"
                 id="navbarNavDropdown"
               >
-                <ul class="navbar-nav d-flex flex-row gap-5">
+                <ul class="navbar-nav d-flex flex-row gap-5" id="navbarUl">
                   <li class="nav-item nav-Anchor">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                   </li>
@@ -34,7 +34,7 @@
                     <a class="nav-link" href="#">Contact Us</a>
                   </li>
                   <li class="nav-item nav-Anchor">
-                    <a class="nav-link" href="#">Login/Singup</a>
+                    <a class="nav-link" href="Login.html">Login/Singup</a>
                   </li>
                 </ul>
               </div>
@@ -65,7 +65,7 @@
                 ></button>
               </div>
               <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1">
+                <ul class="navbar-nav justify-content-end flex-grow-1" id="hamUl">
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                   </li>
@@ -98,6 +98,8 @@
       </div>
     </div>
 
+
+    <!-- Contact Form -->
     <div class="container mb-5">
       <!-- left-side -->
       <div class="row">
@@ -143,7 +145,7 @@
             <button
               type="submit"
               class="btn btn-color bg-yellowgreen rounded-5"
-              id="Login"
+              id="Submit"
             >
               Submit
             </button>
@@ -190,9 +192,19 @@
           ></iframe>
         </div>
       </div>
+      <div class="row col-2 mx-auto my-3">
+        <button
+        type="button"
+        class="btn btn-color bg-yellowgreen rounded-5"
+        id="directions" 
+      >
+      Get directions
+      </button>
+      </div>
     </div>
 
-    <!-- Feedback -->
+
+    <!-- Feedback slideshow -->
     <div class="container">
       <div class="row">
         <h1 class="fs-1 text-center">Feedback</h1>
@@ -300,6 +312,8 @@
       </div>
     </div>
 
+
+    <!-- Footer -->
     <footer class="footer-48201 bg-dark text-light py-5 mt-5">
       <div class="container">
         <div class="row">
@@ -351,5 +365,6 @@
     </footer>
 
     <script src="../BS/js/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/ContactUsScript.js"></script>
   </body>
 </html>

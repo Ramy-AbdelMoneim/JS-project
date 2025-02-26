@@ -1,5 +1,6 @@
 var idwords=document.getElementById("words")
 var idcoursor=document.getElementById("cursor")
+let usrname=document.getElementById("usrname")
 var words = [
     "Passion",
     "Dreams",
@@ -85,3 +86,17 @@ document.addEventListener("DOMContentLoaded", function () {
       usernameElement.textContent = username;
     }
   });
+
+
+  //Retreiving username from cookies
+  function getusrname() {
+    let allcookies = document.cookie.split(';');
+    for (let i = 0; i < allcookies.length; i++) {
+        var [key, value] = allcookies[i].split('=');
+        if(key=='usrname'){
+            return value;
+        }
+    }
+}
+usrname.innerHTML=getusrname();
+usrname.style.fontSize="1.2rem"
