@@ -23,7 +23,7 @@
                 class="d-flex d-none d-md-block w-100"
                 id="navbarNavDropdown"
               >
-                <ul class="navbar-nav d-flex flex-row gap-5">
+                <ul class="navbar-nav d-flex flex-row gap-5" id="navbarUl">
                   <li class="nav-item nav-Anchor">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                   </li>
@@ -34,7 +34,7 @@
                     <a class="nav-link" href="#">Contact Us</a>
                   </li>
                   <li class="nav-item nav-Anchor">
-                    <a class="nav-link" href="#">Login/Singup</a>
+                    <a class="nav-link" href="Login.html">Login/Singup</a>
                   </li>
                 </ul>
               </div>
@@ -65,7 +65,7 @@
                 ></button>
               </div>
               <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1">
+                <ul class="navbar-nav justify-content-end flex-grow-1" id="hamUl">
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                   </li>
@@ -98,6 +98,8 @@
       </div>
     </div>
 
+
+    <!-- Contact Form -->
     <div class="container mb-5">
       <!-- left-side -->
       <div class="row">
@@ -143,7 +145,7 @@
             <button
               type="submit"
               class="btn btn-color bg-yellowgreen rounded-5"
-              id="Login"
+              id="Submit"
             >
               Submit
             </button>
@@ -190,9 +192,19 @@
           ></iframe>
         </div>
       </div>
+      <div class="row col-2 mx-auto my-3">
+        <button
+        type="button"
+        class="btn btn-color bg-yellowgreen rounded-5"
+        id="directions" 
+      >
+      Get directions
+      </button>
+      </div>
     </div>
 
-    <!-- Feedback -->
+
+    <!-- Feedback slideshow -->
     <div class="container">
       <div class="row">
         <h1 class="fs-1 text-center">Feedback</h1>
@@ -300,6 +312,59 @@
       </div>
     </div>
 
+
+    <!-- Footer -->
+    <footer class="footer-48201 bg-dark text-light py-5 mt-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4 pr-md-5">
+            <h3>About Tour</h3>
+            <p>Across the green fields, beyond the roaring crowds, far from the ordinary, lies the perfect pitch where every game begins and every player shines." ⚽🏆</p>
+            <p class="social">
+              <a href="#" class="p-2"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="p-2"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="p-2"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="p-2"><i class="fa-brands fa-linkedin"></i></a>
+            </p>
+          </div>
+          <!-- Pages Section -->
+          <div class="col-md">
+            <h3>Pages</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Resources Section -->
+          <div class="col-md">
+            <h3>Resources</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Contact Section -->
+          <div class="col-md">
+            <h3>Contact</h3>
+            <ul class="list-unstyled">
+              <li><a href="mailto:mail@example.com">mail@example.com</a></li>
+              <li><a href="tel:+12222123819">+1 222 212 3819</a></li>
+              <li><span>43 Raymouth Rd. Baltemoer, London 3910</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <p>&copy; 2025. All Rights Reserved. — Designed with love by <a href="https://untree.co" target="_blank">ITI</a> Distributed By <a href="https://themewagon.com" target="_blank">Football Team</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="../BS/js/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/ContactUsScript.js"></script>
   </body>
 </html>
