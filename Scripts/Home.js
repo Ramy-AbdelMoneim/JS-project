@@ -73,6 +73,90 @@ function changeImage() {
   images[currentIndex].classList.add('work');
   
 }
-
 setInterval(changeImage, 3500);                 
-  
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.getElementById("cards-container");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const indicatorsContainer = document.querySelector(".indicators");
+
+    const cardsPerPage = 3;
+    let totalCards = 0;
+    let totalSlides = 0;
+    let currentSlide = 0;
+
+    fetch("../JSON/Fields.json")
+        .then(response => response.json())
+        .then(data => {
+            const maxItems = Math.min(data.length, 10);
+            totalCards = maxItems;
+
+            data.slice(0, maxItems).forEach(item => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width:100%;height:150px;object-fit:cover;">
+                    <h3>${item.name}</h3>
+                    <p><strong>Rating:</strong> ⭐ ${item.rating}</p>
+                    <p><strong>Phone:</strong> ${item.phoneNumber}</p>
+                    <button class="btn btn-primary">${item.price} EGP/hour</button>
+                `;
+                wrapper.appendChild(card);
+            });
+
+            totalSlides = Math.ceil(totalCards / cardsPerPage);
+            updateIndicators();
+            updateSlider();
+        })
+        .catch(error => {
+            console.error("Error loading JSON data:", error);
+            wrapper.innerHTML = `<div class="text-center m-5 w-100 text-danger">❌ Failed to load fields. Please try again later.</div>`;
+        });
+
+    function updateSlider() {
+        const offset = currentSlide * (100 / cardsPerPage) * cardsPerPage;
+        wrapper.style.transform = `translateX(-${offset}%)`;
+        updateIndicators();
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+        } else {
+            currentSlide = 0; 
+        }
+        updateSlider();
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            currentSlide = totalSlides - 1; 
+        }
+        updateSlider();
+    }
+
+    function updateIndicators() {
+        indicatorsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('indicator');
+            if (i === currentSlide) {
+                dot.classList.add('active');
+            }
+            dot.onclick = () => {
+                currentSlide = i;
+                updateSlider();
+            };
+            indicatorsContainer.appendChild(dot);
+        }
+    }
+
+    prevBtn.onclick = prevSlide;
+    nextBtn.onclick = nextSlide;
+});
+
+

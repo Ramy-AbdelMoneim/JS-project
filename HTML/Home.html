@@ -82,6 +82,87 @@
           padding: 30px;
           background: #fffffff0;
       } 
+      .cards-section {
+            display: flex;
+            align-items: center;
+            width: 70%;
+            overflow: hidden;
+            position: relative;
+            height: 350px;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .card {
+            flex: 0 0 calc(100% / 3); /* 3 cards per view */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev-btn {
+            position: absolute;
+            left: 0;
+        }
+
+        .next-btn {
+            position: absolute;
+            right: 0;
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #007bff;
+        }
+      .card img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+      }
+
+      .card h3 {
+          margin: 10px 0;
+          font-size: 18px;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #555;
+      }
+      .card button{
+        width: 100% !important;
+      }
+      
     </style>
   </head>
   <body>
@@ -99,19 +180,19 @@
                   id="navbarNavDropdown"
                 >
                   <ul class="navbar-nav d-flex flex-row gap-5">
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#"
+                    <li class="nav-item ">
+                      <a class="nav-link font-weight-bold" aria-current="page" href="#"
                         >Home</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./about.html">About</a>
+                      <a class="nav-link font-weight-bold" href="./about.html">About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./ContactUs.html">Contact Us</a>
+                      <a class="nav-link font-weight-bold" href="./ContactUs.html">Contact Us</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Login/Singup</a>
+                    <li class="nav-item font-weight-bold">
+                      <a class="nav-link " href="#">Login/Singup</a>
                     </li>
                   </ul>
                 </div>
@@ -249,35 +330,31 @@
         </div>
       </div>
 
-      <div class="container">
-        <h1>Our Products</h1>
-        <div id="cards-container">
-          <div class="card">
-            <img src="" alt="">
-            <h3 class="field-name"></h3>
-            <h4 class="city-name"></h4>
-            <p></p>
-          </div>
-          <div class="card">
-            <img src="" alt="">
-            <h3 class="field-name"></h3>
-            <h4 class="city-name"></h4>
-            <h4 class="price"></h4>
-            <p></p>
-          </div>
-          <div class="card">
-            <img src="" alt="">
-            <h3 class="field-name"></h3>
-            <h4 class="city-name"></h4>
-            <h4 class="price"></h4>
-            <p></p>
-          </div>
+      <div class="container pt-5">
+        <div class="row col-12 text-center ml- p-5">
+
+          <h1 >Football fields available</h1>
         </div>
-    </div>
-    <script src="script.js"></script>
 
-
+      </div>
+      <div class="d-flex">
+        <!-- Slider takes 70% -->
+        <div class="cards-section">
+            <button class="nav-btn prev-btn">‹</button>
+            <div class="cards-wrapper" id="cards-container">
+                <!-- Cards will be inserted by JS -->
+            </div>
+            <button class="nav-btn next-btn">›</button>
+        </div>
+    
+        <!-- Example Aside (you can add anything here) -->
+        <aside style="width: 30%; padding: 10px; background-color: #f0f0f0;">
+            <h3>Filter or Extra Content</h3>
+            <p>Add filters, ads, or any content here.</p>
+        </aside>
     </div>
+    <div class="indicators"></div>
+    
     <script src="../BS/js/bootstrap.bundle.js"></script>
     <script src="../Scripts/Home.js"></script>
   </body>
