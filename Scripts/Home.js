@@ -151,9 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
             fieldDetails.classList.remove("d-none");
         }
         closeButton.onclick = () => {
-            fieldDetails.classList.add("d-none");
-        };
-    
+        fieldDetails.classList.add("d-none");
+    };
+
     function updateSlider() {
         const offset = currentSlide * (30 / cardsPerPage) * cardsPerPage;
         wrapper.style.transform = `translateX(-${offset}%)`;

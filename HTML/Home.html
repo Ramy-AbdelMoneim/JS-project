@@ -507,31 +507,25 @@
               <div id="details-body"></div>
               <hr>
               <h4>Book Your Slot</h4>
-              <!-- <form id="booking-form">
-                  <div class="mb-2">
-                      <label for="booking-day" class="form-label">Choose Day:</label>
-                      <select id="booking-day" class="form-select">
-                          <option>Saturday</option>
-                          <option>Sunday</option>
-                          <option>Monday</option>
-                          <option>Tuesday</option>
-                          <option>Wednesday</option>
-                          <option>Thursday</option>
-                          <option>Friday</option>
-                      </select>
-                  </div>
-                  <div class="mb-2">
-                      <label for="booking-hour" class="form-label">Choose Hour:</label>
-                      <select id="booking-hour" class="form-select">
-                          "${[...Array(24)].map((_, i) => '<option value="${i}">${i}:00</option>').join('')}" -->
-                      <!-- </select>
-                  </div>
-                  <div class="mb-2">
-                      <label for="booking-name" class="form-label">Your Name:</label>
-                      <input type="text" id="booking-name" class="form-control" placeholder="Enter your name">
-                  </div>
-                  <button type="button" class="btn btn-success" onclick="submitBooking()">Book Now</button>
-              </form> -->
+              <form id="booking-form">
+                <label>Choose Day:</label>
+                <select id="booking-day" class="form-select mb-2">
+                    <option>Saturday</option><option>Sunday</option>
+                    <option>Monday</option><option>Tuesday</option>
+                    <option>Wednesday</option><option>Thursday</option><option>Friday</option>
+                </select>
+            
+                <label>From Hour:</label>
+                <select id="booking-start-hour" class="form-select mb-2"></select>
+            
+                <label>To Hour:</label>
+                <select id="booking-end-hour" class="form-select mb-2"></select>
+            
+                <label>Your Name:</label>
+                <input type="text" id="booking-name" class="form-control mb-2" placeholder="Enter your name">
+            
+                <button type="button" class="btn btn-primary btn-success" onclick="submitBooking()">Book Now</button>
+            </form>
           </div>
       </div>
         <div class="container">
