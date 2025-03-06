@@ -81,8 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
     const indicatorsContainer = document.querySelector(".indicators");
+    const fieldDetails = document.getElementById("field-details");
+    const detailsBody = document.getElementById("details-body");
+    const closeButton = document.querySelector(".close-btn");
+    let fieldsData = [];
 
-    const cardsPerPage = 3;
+    const cardsPerPage = 2;
     let totalCards = 0;
     let totalSlides = 0;
     let currentSlide = 0;
@@ -90,10 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("../JSON/Fields.json")
         .then(response => response.json())
         .then(data => {
+            fieldsData = data;
             const maxItems = Math.min(data.length, 10);
             totalCards = maxItems;
 
-            data.slice(0, maxItems).forEach(item => {
+            data.slice(0, maxItems).forEach((item, index)  => {
                 const card = document.createElement("div");
                 card.classList.add("card");
                 card.innerHTML = `
@@ -101,9 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>${item.name}</h3>
                     <p><strong>Rating:</strong> ⭐ ${item.rating}</p>
                     <p><strong>Phone:</strong> ${item.phoneNumber}</p>
-                    <button class="btn btn-primary">${item.price} EGP/hour</button>
+                    <button class="btn btn-primary view-details-btn" data-index="${index}">
+                        ${item.price} EGP/hour
+                    </button>
                 `;
                 wrapper.appendChild(card);
+            });
+            document.querySelectorAll(".view-details-btn").forEach(btn => {
+                btn.onclick = (e) => {
+                    const index = e.target.getAttribute("data-index");
+                    showDetails(fieldsData[index]);
+                };
             });
 
             totalSlides = Math.ceil(totalCards / cardsPerPage);
@@ -114,9 +127,35 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error loading JSON data:", error);
             wrapper.innerHTML = `<div class="text-center m-5 w-100 text-danger">❌ Failed to load fields. Please try again later.</div>`;
         });
-
+        function showDetails(field) {
+            detailsBody.innerHTML = `
+                <h2 class="text-center">${field.name}</h2>
+                <img src="${field.image}" alt="${field.name}" style="width:100%;height:200px;object-fit:cover;margin-bottom:10px;">
+                <p><strong>City:</strong> ${field.city}</p>
+                <p><strong>Rating:</strong> ⭐ ${field.rating}</p>
+                <p><strong>Phone:</strong> ${field.phoneNumber}</p>
+                <p><strong>Price:</strong> ${field.price}</p>
+                <h4>Time Table</h4>
+                <ul>
+                    ${Object.entries(field.timeTable).map(([day, slots]) => `
+                        <li><strong>${day}:</strong>
+                            <ul>
+                                ${slots.length > 0 ? slots.map(slot => `
+                                    <li>${slot.hour}:00 - ${slot.reserved ? `Reserved by ${slot.user}` : "Available"}</li>
+                                `).join('') : '<li>No bookings</li>'}
+                            </ul>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+            fieldDetails.classList.remove("d-none");
+        }
+        closeButton.onclick = () => {
+            fieldDetails.classList.add("d-none");
+        };
+    
     function updateSlider() {
-        const offset = currentSlide * (100 / cardsPerPage) * cardsPerPage;
+        const offset = currentSlide * (30 / cardsPerPage) * cardsPerPage;
         wrapper.style.transform = `translateX(-${offset}%)`;
         updateIndicators();
     }

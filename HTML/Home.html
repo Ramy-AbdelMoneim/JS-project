@@ -191,6 +191,8 @@
         display: flex;
         align-items: center;
         width: 70%;
+        margin:0 20px;
+        border-radius: 20px;
         overflow: hidden;
         position: relative;
         height: 350px;
@@ -202,9 +204,9 @@
       }
 
       .card {
-        flex: 0 0 calc(100% / 3); /* 3 cards per view */
+        flex: 0 0 calc(100% / 6); /* 3 cards per view */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 0 10px;
+        margin: 10px;
         background: #f8f9fa;
         padding: 10px;
         border-radius: 10px;
@@ -235,6 +237,7 @@
         display: flex;
         justify-content: center;
         margin-top: 10px;
+        margin-right: 25%;
       }
 
       .indicator {
@@ -266,6 +269,43 @@
       }
       .card button {
         width: 100% !important;
+      }
+      .field-details-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .details-content {
+          width: 90%;
+          max-width: 600px;
+          background: white;
+          border-radius: 12px;
+          position: relative;
+      }
+
+      .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+      }
+      .field-details-overlay .details-content {
+          max-height: 90vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+      }
+
+      /* تعديل شكل الفورم */
+      #booking-form label {
+          font-weight: bold;
+          margin-top: 10px;
       }
     </style>
   </head>
@@ -460,7 +500,40 @@
             <p>Add filters, ads, or any content here.</p>
           </aside>
         </div>
-
+        <div class="indicators"></div>
+        <div class="field-details-overlay d-none" id="field-details">
+          <div class="details-content p-4 rounded shadow bg-white">
+              <button class="btn btn-danger btn-sm close-btn">X</button>
+              <div id="details-body"></div>
+              <hr>
+              <h4>Book Your Slot</h4>
+              <!-- <form id="booking-form">
+                  <div class="mb-2">
+                      <label for="booking-day" class="form-label">Choose Day:</label>
+                      <select id="booking-day" class="form-select">
+                          <option>Saturday</option>
+                          <option>Sunday</option>
+                          <option>Monday</option>
+                          <option>Tuesday</option>
+                          <option>Wednesday</option>
+                          <option>Thursday</option>
+                          <option>Friday</option>
+                      </select>
+                  </div>
+                  <div class="mb-2">
+                      <label for="booking-hour" class="form-label">Choose Hour:</label>
+                      <select id="booking-hour" class="form-select">
+                          "${[...Array(24)].map((_, i) => '<option value="${i}">${i}:00</option>').join('')}" -->
+                      <!-- </select>
+                  </div>
+                  <div class="mb-2">
+                      <label for="booking-name" class="form-label">Your Name:</label>
+                      <input type="text" id="booking-name" class="form-control" placeholder="Enter your name">
+                  </div>
+                  <button type="button" class="btn btn-success" onclick="submitBooking()">Book Now</button>
+              </form> -->
+          </div>
+      </div>
         <div class="container">
           <div class="row mb-5 justify-content-center">
             <div class="col-lg-6 text-center">
@@ -655,7 +728,7 @@
       </footer>
       <script src="script.js"></script>
     </div>
-    <div class="indicators"></div>
+   
 
     <script src="../BS/js/bootstrap.bundle.js"></script>
     <script src="../Scripts/Home.js"></script>
