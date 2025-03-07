@@ -179,3 +179,57 @@ section {
     object-fit: cover;
   }
 }
+
+/* Footer Styles */
+.footer-48201 {
+  background-color: #343a40; /* Dark background */
+  color: white;
+  padding: 50px 0;
+}
+
+/* Make headers green */
+.footer-48201 h3 {
+  color: #28a745; /* Football green */
+}
+
+/* Style for links */
+.footer-48201 a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 a:hover {
+  color: #28a745; /* Green hover effect */
+}
+
+/* Social Icons */
+.footer-48201 .social a {
+  color: white; /* Default color */
+  font-size: 18px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 .social a:hover {
+  color: #28a745; /* Green on hover */
+}
+
+/* Footer links */
+.footer-48201 .list-unstyled li {
+  margin-bottom: 8px;
+}
+
+.footer-48201 .list-unstyled a {
+  font-size: 16px;
+}
+
+/* Centering the copyright text */
+.footer-48201 .text-center p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+
