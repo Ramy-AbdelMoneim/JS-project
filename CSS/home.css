@@ -4,6 +4,14 @@
 .bg-lowopacity {
   background-color: rgba(255, 255, 255, 0.596);
 }
+
+.logo-img {
+  width: 60px;  
+  height: 60px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
 .text_word::before {
   position: absolute;
   height: 7px;
