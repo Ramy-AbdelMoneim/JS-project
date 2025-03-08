@@ -233,3 +233,9 @@ section {
 }
 
 
+.logo-img {
+  width: 2rem;  
+  height: 1.5rem; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}

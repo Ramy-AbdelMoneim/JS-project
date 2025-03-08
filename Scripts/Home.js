@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalSlides = 0;
   let currentSlide = 0;
 
-  fetch("../JSON/Fields.json")
+  var fetching=fetch("../JSON/Fields.json")
     .then((response) => response.json())
     .then((data) => {
       fieldsData = data;
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>${item.name}</h3>
                     <p><strong>Rating:</strong> ⭐ ${item.rating}</p>
                     <p><strong>Phone:</strong> ${item.phoneNumber}</p>
-                    <button class="btn btn-primary view-details-btn" data-index="${index}">
+                    <button class="btn btn-primary view-details-btn cardbtn"  data-index="${index}">
                         ${item.price} EGP/hour
                     </button>
                 `;
@@ -207,3 +207,60 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.onclick = prevSlide;
   nextBtn.onclick = nextSlide;
 });
+
+
+
+//if logged in remove login button and display img and name switch disabled button
+
+function hascookie(input) {
+  let allcookies = document.cookie.split(';');
+  for (let i = 0; i < allcookies.length; i++) {
+      var [key, value] = allcookies[i].split('=');
+      if(key==input){
+          return true
+      }
+  }
+  return false;
+}
+
+//retrieve cookie value
+function getcookie(input)
+{
+  let allcookies=document.cookie.split(';');
+  for(let i=0;i< allcookies.length;i++)
+  {
+    var [key,val]=allcookies[i].split('=');
+    if(key==input)
+    {
+      return val;
+    }
+  }
+}
+
+
+let login=document.getElementById("navbarUl");
+let ham=document.getElementById("hamUl");
+let profile=document.getElementsByClassName("profile");
+let usrname=document.getElementsByClassName("usrname");
+let cardbtn=document.getElementsByClassName("cardbtn");
+let booking=document.getElementById("booking");
+//if logged in
+if(hascookie("usrname")){
+  
+  // console.log("in")
+  login.lastElementChild.remove();
+  ham.lastElementChild.remove();
+  // console.log(getcookie("usrname"));
+  usrname[0].innerHTML=getcookie("usrname");
+  profile[0].classList.remove("d-none");
+  usrname[1].innerHTML=getcookie("usrname");
+  profile[1].classList.remove("d-none");
+  // console.log(document.getElementsByClassName("cardbtn"))
+
+}
+else
+{
+  booking.addEventListener("click",function(){
+    location.assign("./Login.html")
+  })
+}

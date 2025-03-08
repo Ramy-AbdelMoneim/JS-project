@@ -21,9 +21,7 @@
             <!-- Logo Section -->
             <div class="col-6 col-md-2 d-flex align-items-center p-3 d-none">
               <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" id="pro-img" />
-              <span id="usrname" class="ms-2"></span>
             </div>
-             <!-- Hna Ya Ramy  -->
              <!--  End Logo Section -->
 
 
@@ -38,7 +36,7 @@
                   class="d-flex d-none d-md-block w-100"
                   id="navbarNavDropdown"
                 >
-                  <ul class="navbar-nav d-flex flex-row gap-5">
+                  <ul class="navbar-nav d-flex flex-row gap-5 " id="navbarUl">
                     <li class="nav-item">
                       <a
                         class="nav-link font-weight-bold"
@@ -58,6 +56,12 @@
                         href="./ContactUs.html"
                         >Contact Us</a
                       >
+                    </li>
+                    <li class="nav-item font-weight-bold d-none profile" >
+                      <a class="nav-link" href="#" id="usrname/img">
+                        <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                        <span class="usrname"></span>
+                      </a>
                     </li>
                     <li class="nav-item font-weight-bold">
                       <a class="nav-link" href="./Login.html">Login/Singup</a>
@@ -93,7 +97,13 @@
                   ></button>
                 </div>
                 <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1">
+                  <ul class="navbar-nav justify-content-end flex-grow-1" id="hamUl">
+                    <li class="nav-item font-weight-bold d-none profile" >
+                      <a class="nav-link" href="#" id="usrname/img">
+                        <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                        <span class="usrname"></span>
+                      </a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
@@ -284,7 +294,7 @@
 
           <button
             type="button"
-            class="btn btn-primary btn-success"
+            class="btn btn-primary btn-success" id="booking"
             onclick="submitBooking()"
           >
             Book Now
