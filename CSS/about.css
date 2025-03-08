@@ -27,8 +27,35 @@ header {
   margin-right: 0%;
   margin-left: 0%;
 }
-.header-nav * {
+#navbarUl * {
   color: #eff5ff !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#navbarUl li:hover > a,
+#navbarUl li:hover > a span {
+  color: rgb(206, 180, 64) !important;
+}
+/* #navbarUl li a:hover,
+#navbarUl li a span:hover {
+  color: rgb(255, 214, 31) !important;
+  box-shadow: 0 0 0.5rem #93ffac;
+} */
+.nav-ham {
+  background-color: #868686;
+}
+#offcanvasNavbar {
+  background-color: #f0f0f0;
+}
+.offcanvas-body ul li {
+  margin: 1rem 0rem;
+  padding-left: 0.5rem;
+  background-color: #dfdfdf;
+  border-radius: 1rem;
+}
+.offcanvas-body ul li a {
+  color: #002003;
+  font-size: 1rem;
 }
 .main-desc {
   padding: 2rem 0;
@@ -232,10 +259,9 @@ section {
   color: #cccccc;
 }
 
-
 .logo-img {
-  width: 2rem;  
-  height: 1.5rem; 
-  border-radius: 50%; 
-  object-fit: cover; 
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
 }

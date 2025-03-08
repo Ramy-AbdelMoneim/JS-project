@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="../BS/css/bootstrap.min.css.map" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
     <link rel="stylesheet" href="../CSS/about.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-6c+fQX8+dW0Fg0S3EoMCZQoF3H2l+bAEf8It88zMg5nDQb5MZl8qIzD6XWS5wnCwNHH7FcD7RL6dIzrKr5kKFg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-6c+fQX8+dW0Fg0S3EoMCZQoF3H2l+bAEf8It88zMg5nDQb5MZl8qIzD6XWS5wnCwNHH7FcD7RL6dIzrKr5kKFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -37,15 +42,17 @@
                     <a class="nav-link" href="./about.html">About</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link font-weight-bold"
-                      href="./ContactUs.html"
+                    <a class="nav-link font-weight-bold" href="./ContactUs.html"
                       >Contact Us</a
                     >
                   </li>
                   <li class="nav-item font-weight-bold d-none profile">
-                    <a class="nav-link" href="#" id="usrname/img">
-                      <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                    <a class="nav-link" href="#" id="usrname-img">
+                      <img
+                        src="../Images/about-slide-1-1.jpg"
+                        alt="Logo"
+                        class="logo-img"
+                      />
                       <span class="usrname"></span>
                     </a>
                   </li>
@@ -56,7 +63,7 @@
               </div>
             </div>
             <button
-              class="navbar-toggler d-block d-md-none"
+              class="navbar-toggler d-block d-md-none nav-ham"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar"
@@ -65,8 +72,9 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- ^ nav small screens -->
             <div
-              class="offcanvas offcanvas-end bg-lowopacity w-50"
+              class="offcanvas offcanvas-end bg-opacity-100 w-50"
               tabindex="-1"
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
@@ -81,14 +89,26 @@
                 ></button>
               </div>
               <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1" id="hamUl">
+                <ul
+                  class="navbar-nav justify-content-end flex-grow-1"
+                  id="hamUl"
+                >
                   <li class="nav-item font-weight-bold d-none profile">
                     <a class="nav-link" href="#" id="usrname/img">
-                      <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                      <img
+                        src="../Images/about-slide-1-1.jpg"
+                        alt="Logo"
+                        class="logo-img"
+                      />
                       <span class="usrname"></span>
                     </a>
+                  </li>
+
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./Home.html"
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./Home.html"
                       >Home</a
                     >
                   </li>
