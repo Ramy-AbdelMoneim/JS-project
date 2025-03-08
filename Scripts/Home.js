@@ -261,6 +261,10 @@ if(hascookie("usrname")){
 else
 {
   booking.addEventListener("click",function(){
-    location.assign("./Login.html")
+    
+    if(confirm("You need to be logged in first \n Do you want to login?"))
+    {
+      location.assign("./Login.html")
+    }
   })
 }
