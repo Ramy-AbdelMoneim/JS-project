@@ -9,32 +9,23 @@ function filterListen() {
   let days = document.getElementById("priceRange");
   let hours = document.getElementById("priceRange");
   price.addEventListener("change", updatePrice);
-  // price.addEventListener("change", updatePrice);
-  // price.addEventListener("change", updatePrice);
-  // price.addEventListener("change", updatePrice);
-  // price.addEventListener("change", updatePrice);
 }
 function getDayOfWeek() {
-  let dateValue = document.getElementById("dateInput").value;
-
-  if (!dateValue) {
-    document.getElementById("output").innerText = "Please select a date.";
-    return;
+  let dateValue = document.getElementById("search-date").value;
+  if (dateValue) {
+    let date = new Date(dateValue); // Convert input to Date object
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let dayName = days[date.getDay()]; // Get day name
+    return dayName;
   }
-
-  let date = new Date(dateValue); // Convert input to Date object
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let dayName = days[date.getDay()]; // Get day name
-
-  document.getElementById("output").innerText = "The day is: " + dayName;
 }
 function filterByCity(data, city) {
   let datafiltered = [];
@@ -48,8 +39,6 @@ function filterByCity(data, city) {
   return datafiltered;
 }
 function filterByPrice(data, price) {
-  // ? price range
-
   let datafiltered = [];
   datafiltered = data;
   if (
@@ -71,8 +60,50 @@ function filterByRating(data, rating) {
   }
   return datafiltered;
 }
-function filterByDay(data, day) {}
-function filterByHours(data, hours) {}
+function filterByDay(data, day = getDayOfWeek()) {
+  let datafiltered = [];
+  datafiltered = data;
+  if (
+    data &&
+    (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
+  ) {
+    datafiltered = datafiltered.filter((el) => el.timeTable[day].length < 24);
+  }
+  return datafiltered;
+}
+function filterByHours(data, hours) {
+  let datafiltered = [];
+  let day = getDayOfWeek();
+  datafiltered = data;
+  if (
+    data &&
+    (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
+  ) {
+    datafiltered = datafiltered.filter((el) => {
+      // Check if timeTable and day exist
+
+      console.log(day);
+      if (el.timeTable && el.timeTable[day] && el.timeTable[day].length !== 0) {
+        //2 cases: has reservation of at least one hour of hours or not
+        if (
+          el.timeTable[day].some((reservation) =>
+            hours.includes(reservation["hour"])
+          )
+        ) {
+          //has reservation within the hours selected
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        // day is empty of reservations or doesn't exist
+        return false;
+      }
+    });
+  }
+  return datafiltered;
+}
+
 function searchFilter(data, city, date, fromHour, toHour) {
   //input data
   // check on it
@@ -85,4 +116,4 @@ function searchFilter(data, city, date, fromHour, toHour) {
     datafiltered = datafiltered.filter((el) => el.city == city);
   }
 }
-export { filterByCity, filterByPrice, filterListen };
+export { filterByCity, filterByDay, filterListen, getDayOfWeek, filterByHours };

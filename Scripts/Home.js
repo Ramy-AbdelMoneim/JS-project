@@ -1,5 +1,5 @@
-import { isLogged } from "../modules/checkCookies.js";
-isLogged();
+import { isLoggedHome } from "../modules/checkCookies.js";
+isLoggedHome();
 import { animateHeader } from "../modules/headerAnimate.js";
 animateHeader();
 import { makeSlider } from "../modules/homeCardsSlider.js";
@@ -31,3 +31,4 @@ async function init() {
   let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
   document.getElementById("search-date").value = tomorrowFormatted;
 }
+export { loadData };

@@ -40,6 +40,19 @@ function isLogged() {
     usrname[1].innerHTML = getcookie("usrname");
     profile[1].classList.remove("d-none");
     // console.log(document.getElementsByClassName("cardbtn"))
+  }
+}
+function isLoggedHome() {
+  if (hascookie("usrname")) {
+    // console.log("in")
+    login.lastElementChild.remove();
+    ham.lastElementChild.remove();
+    // console.log(getcookie("usrname"));
+    usrname[0].innerHTML = getcookie("usrname");
+    profile[0].classList.remove("d-none");
+    usrname[1].innerHTML = getcookie("usrname");
+    profile[1].classList.remove("d-none");
+    // console.log(document.getElementsByClassName("cardbtn"))
   } else {
     booking.addEventListener("click", function () {
       if (confirm("You need to be logged in first \n Do you want to login?")) {
@@ -48,4 +61,4 @@ function isLogged() {
     });
   }
 }
-export { isLogged };
+export { isLoggedHome, isLogged };
