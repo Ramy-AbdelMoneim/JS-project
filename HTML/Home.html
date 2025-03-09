@@ -6,8 +6,13 @@
     <title>Football Booking</title>
     <link href="../BS/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/home.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-6c+fQX8+dW0Fg0S3EoMCZQoF3H2l+bAEf8It88zMg5nDQb5MZl8qIzD6XWS5wnCwNHH7FcD7RL6dIzrKr5kKFg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-6c+fQX8+dW0Fg0S3EoMCZQoF3H2l+bAEf8It88zMg5nDQb5MZl8qIzD6XWS5wnCwNHH7FcD7RL6dIzrKr5kKFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- & header includin nav & main & search -->
@@ -18,16 +23,16 @@
             <h1>logo</h1>
           </div>
 
-            <!-- Logo Section -->
-            <div class="col-6 col-md-2 d-flex align-items-center p-3 d-none">
-              <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" id="pro-img" />
-            </div>
-             <!--  End Logo Section -->
-
-
-
-
-
+          <!-- Logo Section -->
+          <div class="col-6 col-md-2 d-flex align-items-center p-3 d-none">
+            <img
+              src="../Images/about-slide-1-1.jpg"
+              alt="Logo"
+              class="logo-img"
+              id="pro-img"
+            />
+          </div>
+          <!--  End Logo Section -->
 
           <div class="col-9 d-flex justify-content-end">
             <nav class="navbar border-body" data-bs-theme="white">
@@ -36,7 +41,7 @@
                   class="d-flex d-none d-md-block w-100"
                   id="navbarNavDropdown"
                 >
-                  <ul class="navbar-nav d-flex flex-row gap-5 " id="navbarUl">
+                  <ul class="navbar-nav d-flex flex-row gap-5" id="navbarUl">
                     <li class="nav-item">
                       <a
                         class="nav-link font-weight-bold"
@@ -57,9 +62,13 @@
                         >Contact Us</a
                       >
                     </li>
-                    <li class="nav-item font-weight-bold d-none profile" >
+                    <li class="nav-item font-weight-bold d-none profile">
                       <a class="nav-link" href="#" id="usrname/img">
-                        <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                        <img
+                          src="../Images/about-slide-1-1.jpg"
+                          alt="Logo"
+                          class="logo-img"
+                        />
                         <span class="usrname"></span>
                       </a>
                     </li>
@@ -97,10 +106,17 @@
                   ></button>
                 </div>
                 <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1" id="hamUl">
-                    <li class="nav-item font-weight-bold d-none profile" >
+                  <ul
+                    class="navbar-nav justify-content-end flex-grow-1"
+                    id="hamUl"
+                  >
+                    <li class="nav-item font-weight-bold d-none profile">
                       <a class="nav-link" href="#" id="usrname/img">
-                        <img src="../Images/about-slide-1-1.jpg" alt="Logo" class="logo-img" />
+                        <img
+                          src="../Images/about-slide-1-1.jpg"
+                          alt="Logo"
+                          class="logo-img"
+                        />
                         <span class="usrname"></span>
                       </a>
                     </li>
@@ -164,26 +180,53 @@
                   <div class="row mb-6">
                     <!-- First Form Group -->
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                      <select name="" id="" class="form-control custom-select">
+                      <select
+                        name=""
+                        id="search-city"
+                        class="form-control custom-select"
+                      >
                         <option value="">Cairo</option>
                         <option value="">ALex</option>
-                        <option value="">Aswan</option>
+                        <!-- <option value="">Aswan</option>
                         <option value="">Elfayom</option>
                         <option value="">Mansora</option>
                         <option value="">Tanta</option>
-                        <option value="">Damnhour</option>
+                        <option value="">Damnhour</option> -->
                       </select>
                     </div>
                     <!-- Second Form Group -->
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                      <input type="date" class="form-control" />
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="search-date"
+                      />
                     </div>
                     <!-- Third Form Group -->
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+                      <label class="col-5" id="search-from-hour">From</label>
                       <input
-                        type="text"
+                        class="col-7"
+                        id="search-from-hour"
+                        type="time"
+                        min="00:00"
+                        max="23:00"
+                        step="3600"
                         class="form-control"
-                        placeholder="# of People"
+                        value="19:00"
+                      />
+                    </div>
+                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+                      <label class="col-5" for="search-to-hour">To</label>
+                      <input
+                        class="col-7"
+                        id="search-to-hour"
+                        type="time"
+                        min="00:00"
+                        max="23:00"
+                        step="3600"
+                        class="form-control"
+                        value="19:00"
                       />
                     </div>
                   </div>
@@ -192,6 +235,7 @@
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 mt-3 col-lg-4">
                       <input
                         type="submit"
+                        id="home-search-btn"
                         class="btn btn-primary btn-block fs-5 col-12"
                         value="Search"
                       />
@@ -294,7 +338,8 @@
 
           <button
             type="button"
-            class="btn btn-primary btn-success" id="booking"
+            class="btn btn-primary btn-success"
+            id="booking"
             onclick="submitBooking()"
           >
             Book Now
