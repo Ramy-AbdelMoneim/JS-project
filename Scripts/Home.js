@@ -5,7 +5,13 @@ animateHeader();
 import { makeSlider } from "../modules/homeCardsSlider.js";
 import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
-//^ functions for data --------------------------------------------------------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+  homeSearch.searchlisten();
+  filterBy.filterListen();
+});
+
 async function loadData() {
   try {
     const response = await fetch("../JSON/Fields.json");
@@ -16,18 +22,12 @@ async function loadData() {
     return [];
   }
 }
-
-//^ functions for fileds cards--------------------------------------------------------------------------
-
 async function init() {
   const data = await loadData();
   makeSlider(data);
-  let today = new Date().toISOString().split("T")[0];
-  document.getElementById("search-date").value = today;
+  let today = new Date();
+  let tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
+  document.getElementById("search-date").value = tomorrowFormatted;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  init();
-  homeSearch.searchlisten();
-  filterBy.filterListen();
-});
