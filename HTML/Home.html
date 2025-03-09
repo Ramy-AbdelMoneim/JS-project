@@ -6,13 +6,13 @@
     <title>Football Booking</title>
     <link href="../BS/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/home.css" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-6c+fQX8+dW0Fg0S3EoMCZQoF3H2l+bAEf8It88zMg5nDQb5MZl8qIzD6XWS5wnCwNHH7FcD7RL6dIzrKr5kKFg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> -->
   </head>
   <body>
     <!-- & header includin nav & main & search -->
@@ -176,22 +176,22 @@
             <div class="row">
               <div class="col-7 mt-5 shadow-3">
                 <!-- Form -->
-                <form class="form">
+                <form class="form" id="searchForm">
                   <div class="row mb-6">
                     <!-- First Form Group -->
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                       <select
-                        name=""
+                        name="city"
                         id="search-city"
                         class="form-control custom-select"
                       >
-                        <option value="">Cairo</option>
-                        <option value="">ALex</option>
-                        <!-- <option value="">Aswan</option>
-                        <option value="">Elfayom</option>
-                        <option value="">Mansora</option>
-                        <option value="">Tanta</option>
-                        <option value="">Damnhour</option> -->
+                        <option value="Cairo">Cairo</option>
+                        <option value="Alex">ALex</option>
+                        <!-- <option value="Aswan">Aswan</option>
+                        <option value="Elfayom">Elfayom</option>
+                        <option value="Mansora">Mansora</option>
+                        <option value="Tanta">Tanta</option>
+                        <option value="Damnhour">Damnhour</option> -->
                       </select>
                     </div>
                     <!-- Second Form Group -->
@@ -204,7 +204,7 @@
                     </div>
                     <!-- Third Form Group -->
                     <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                      <label class="col-5" id="search-from-hour">From</label>
+                      <label class="col-5" for="search-from-hour">From</label>
                       <input
                         class="col-7"
                         id="search-from-hour"
@@ -226,7 +226,7 @@
                         max="23:00"
                         step="3600"
                         class="form-control"
-                        value="19:00"
+                        value="20:00"
                       />
                     </div>
                   </div>
@@ -276,7 +276,20 @@
         </div>
         <div class="fitler-price filter-section-border">
           <h5 class="filter-section-header">Price</h5>
-          <ul class="filter-ul"></ul>
+          <div class="range-container">
+            <input
+              type="range"
+              name="priceFilter"
+              id="priceRange"
+              min="50"
+              max="1000"
+              step="10"
+              value="150"
+            />
+            <div class="price-display">
+              Price: <span id="price-value">150</span>EGP
+            </div>
+          </div>
         </div>
         <div class="filter-city filter-section-border">
           <h5 class="filter-section-header">City</h5>
@@ -527,6 +540,6 @@
     </footer>
 
     <script src="../BS/js/bootstrap.bundle.js"></script>
-    <script src="../Scripts/Home.js"></script>
+    <script type="module" src="../Scripts/Home.js"></script>
   </body>
 </html>
