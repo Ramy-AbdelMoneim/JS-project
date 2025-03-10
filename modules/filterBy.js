@@ -72,36 +72,24 @@ function filterByDay(data, day = getDayOfWeek()) {
   return datafiltered;
 }
 function filterByHours(data, hours) {
-  let datafiltered = [];
   let day = getDayOfWeek();
-  datafiltered = data;
   if (
     data &&
     (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
   ) {
-    datafiltered = datafiltered.filter((el) => {
-      // Check if timeTable and day exist
-
-      console.log(day);
-      if (el.timeTable && el.timeTable[day] && el.timeTable[day].length !== 0) {
-        //2 cases: has reservation of at least one hour of hours or not
-        if (
-          el.timeTable[day].some((reservation) =>
-            hours.includes(reservation["hour"])
-          )
-        ) {
-          //has reservation within the hours selected
-          return false;
-        } else {
-          return true;
-        }
-      } else {
-        // day is empty of reservations or doesn't exist
-        return false;
+    return data.filter((el) => {
+      if (!el.timeTable || !el.timeTable[day]) {
+        return true; // No reservations data for this day
       }
+      if (!el.timeTable || !el.timeTable[day]) {
+        return true; // No reservations data for this day, so it's available
+      }
+
+      return !hours.some((hour) =>
+        el.timeTable[day].some((reservation) => reservation.hour === hour)
+      );
     });
   }
-  return datafiltered;
 }
 
 function searchFilter(data, city, date, fromHour, toHour) {
