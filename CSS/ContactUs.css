@@ -31,6 +31,16 @@
     color:wheat;
 }
 
+#dropdownMenuLink
+{
+  color:white;
+}
+#dropdownMenuLink:hover
+{
+  color:wheat;
+}
+
+
 .green-bg
 {
     background-color: grey;
@@ -98,4 +108,15 @@
     height: 1.5rem; 
     border-radius: 50%; 
     object-fit: cover; 
+  }
+
+  #DropDownUl 
+  {
+    position: absolute;
+    right:auto;
+    left:-1.5rem;
+  }
+  .dropdown-item:hover
+  {
+    color:wheat;
   }

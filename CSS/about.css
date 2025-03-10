@@ -28,7 +28,7 @@ header {
   margin-left: 0%;
 }
 #navbarUl * {
-  color: #eff5ff !important;
+  color: #eff5ff ;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -264,4 +264,15 @@ section {
   height: 1.5rem;
   border-radius: 50%;
   object-fit: cover;
+}
+
+#DropDownUl 
+{
+  position: absolute;
+  right:auto;
+  left:-1.5rem;
+}
+.dropdown-item
+{
+  color:black !important;
 }

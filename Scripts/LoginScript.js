@@ -3,6 +3,7 @@
 let formsubmit = document.forms[0];
 let cookies = [];
 let usrname;
+let loginForm=document.getElementById("loginform")
 formsubmit.onsubmit = function (event) {
     event.preventDefault();
     let Mail = document.getElementById("InputEmail").value;
@@ -20,8 +21,9 @@ formsubmit.onsubmit = function (event) {
         for (let i in usersdata) {
             if (Mail == i && Password == usersdata[i].Password) {
                 // console.log("Login Successful")
-                document.cookie = `usrname=${usersdata[i].username}`
-                usrname = usersdata[i].username;
+                document.cookie = `usrname=${usersdata[i].Username}`
+                localStorage.setItem("profilepic",usersdata[i].Profile)
+                usrname = usersdata[i].Username;
                 login = true;
                 break;
             }
@@ -32,7 +34,7 @@ formsubmit.onsubmit = function (event) {
         else {
             // getcookies();
             alert(`Welcome back, ${usrname}`)
-            formsubmit.submit();
+            loginForm.action=history.go(-1);
         }
 
 
@@ -43,3 +45,5 @@ formsubmit.onsubmit = function (event) {
     )
 
 }
+
+

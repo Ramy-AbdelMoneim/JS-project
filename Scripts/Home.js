@@ -5,6 +5,7 @@ animateHeader();
 import { makeSlider } from "../modules/homeCardsSlider.js";
 import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
+import { Logout } from "../modules/checkCookies.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   init();
@@ -32,3 +33,10 @@ async function init() {
   document.getElementById("search-date").value = tomorrowFormatted;
 }
 export { loadData };
+
+//  Logout
+
+let LogoutNav=document.getElementsByClassName('Logout')[0];
+let LogoutHam=document.getElementsByClassName('Logout')[1];
+LogoutNav.onclick=Logout;
+LogoutHam.onclick=Logout;

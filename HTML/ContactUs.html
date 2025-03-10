@@ -42,18 +42,21 @@
                   <li class="nav-item nav-Anchor">
                     <a class="nav-link" href="./ContactUs.html">Contact Us</a>
                   </li>
-                  <li
-                    class="nav-item font-weight-bold d-none nav-Anchor profile"
-                  >
-                    <a class="nav-link" href="#" id="usrname/img">
-                      <img
-                        src="../Images/about-slide-1-1.jpg"
-                        alt="Logo"
-                        class="logo-img"
-                      />
-                      <span class="usrname"></span>
-                    </a>
-                  </li>
+                  <li class="nav-item dropdown profile nav-Anchor d-flex align-items-center d-none">
+                    <img
+                    alt="profilepic"
+                    class="logo-img mx-1 profilepic"
+                  />
+                  <a class="nav-link dropdown-toggle usrname" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
+                    
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="DropDownUl">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item Logout" href="#">Logout</a></li>
+                  </ul>
+                </li>
+
+
                   <li class="nav-item nav-Anchor">
                     <a class="nav-link" href="Login.html">Login/Singup</a>
                   </li>
@@ -93,10 +96,9 @@
                   <li class="nav-item font-weight-bold d-none profile">
                     <a class="nav-link" href="#">
                       <img
-                        src="../Images/about-slide-1-1.jpg"
-                        alt="Logo"
-                        class="logo-img"
-                      />
+                      alt="profilepic"
+                      class="logo-img mx-1 profilepic"
+                    />
                       <span class="usrname"></span>
                     </a>
                   </li>
@@ -111,6 +113,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./ContactUs.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item d-none Logout">
+                    <a class="nav-link" href="./ContactUs.html">Logout</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./Login.html">Login / Singup</a>
