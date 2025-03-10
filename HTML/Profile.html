@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fonts/remixicon.css" />
+    <link rel="stylesheet" href="../CSS/Profile.css">
+   
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brandLogo">
+          <figure>
+            <img src="../Images/omar.jpeg" alt="logo" width="40px" height="40px" />Logo
+          </figure>
+        </div>
+      </header>
+      <section class="userProfile card">
+        <div class="profile-container">
+          <div class="profile">
+            <figure>
+              <img src="../Images/omar.jpeg" alt="profile" width="250px" height="250px" />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <div class="skills card">
+        <h1 class="heading">Contact Information</h1>
+        <ul>
+          <li class="phone">
+            <h1 class="label">Phone:</h1>
+            <span class="info">+20 1111047751</span>
+          </li>
+          <li class="email">
+            <h1 class="label">E-mail:</h1>
+            <span class="info">omarfriga20@gmail.com</span>
+          </li>
+          <li class="birthday">
+            <h1 class="label">Birthday:</h1>
+            <span class="info">Jul 12, 2000</span>
+          </li>
+          <li class="position">
+            <h1 class="label">Position:</h1>
+            <span class="info">Play Maker</span>
+          </li>
+        </ul>
+      </div>
+      <section class="timeline_about card">
+        <div class="tabs">
+          <ul>
+            <li
+              class="timeline upcoming active"
+              onclick="showUpcomingBooking()"
+            >
+              <i class="ri-eye-fill ri"></i>
+              <span>Upcoming Booking</span>
+            </li>
+            <li class="about finished" onclick="showFinishedBooking()">
+              <i class="ri-user-3-fill ri"></i>
+              <span>Finished Booking</span>
+            </li>
+          </ul>
+        </div>
+
+        <div id="finishedBooking">
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-1.jpg" alt="Image" class="m-3" />
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="status-label">Completed</span>
+          </div>
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-2.jpg" alt="Image"class="m-3" />
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="status-label">Completed</span>
+          </div>
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-1.jpg" alt="Image" class="m-3"/>
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="status-label">Completed</span>
+          </div>
+        </div>
+
+        <div id="UpcomingBooking">
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-1.jpg" alt="Image" class="m-3"/>
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="Upcoming-Status">Pending</span>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-2.jpg" alt="Image" class="m-3"/>
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="Upcoming-Status">Pending</span>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+          <div class="card">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-2.jpg" alt="Image" class="m-3"/>
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="Upcoming-Status">Pending</span>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+          <div class="card position-relative">
+            <div class="d-flex align-items-center">
+              <img src="../Images/about-slide-1-2.jpg" alt="Image" class="m-3"/>
+              <div class="p-3">
+                <h5 class="card-title mb-1">Name: Port-Sport</h5>
+                <p class="mb-1">Date: 01/01/2023</p>
+                <p class="mb-1">From: 8:00</p>
+                <p class="mb-1">To: 10:00</p>
+                <p class="mb-0">Total Price: $200</p>
+              </div>
+            </div>
+            <span class="Upcoming-Status">Pending</span>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+    <script src="../Scripts/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
