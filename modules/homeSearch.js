@@ -5,6 +5,7 @@ import {
   getDayOfWeek,
 } from "./filterBy.js";
 import { loadData } from "../Scripts/Home.js";
+import { makeSlider } from "./homeCardsSlider.js";
 function searchlisten() {
   document
     .getElementById("searchForm")
@@ -15,7 +16,7 @@ function searchlisten() {
   searchBtn.addEventListener("click", updateData);
 }
 async function updateData() {
-  const data = await loadData();
+  let data = await loadData();
   const city = document.getElementById("search-city").value;
   const date = document.getElementById("search-date").value;
   let fromHour = parseInt(document.getElementById("search-from-hour").value);
@@ -25,10 +26,15 @@ async function updateData() {
   for (let i = fromHour; i < toHour; i++) {
     hours.push(i);
   }
-  console.log(hours);
+  data = filterByHours(filterByDay(filterByCity(data, city)), hours);
+  wrapper.innerHTML = "";
+  makeSlider(data);
+  // console.log(wrapper.childNodes);
+  console.log(data);
+  // console.log(hours);
   // console.log(filterByCity(data, city));
   // console.log(filterByDay(data));
-  console.log(filterByHours(data, hours));
+  // console.log(filterByHours(data, hours));
   // console.log("City:", city || "not provided");
 }
 export { searchlisten };

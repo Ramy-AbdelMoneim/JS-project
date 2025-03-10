@@ -6,10 +6,10 @@
 }
 
 .logo-img {
-  width: 2rem;  
-  height: 1.5rem; 
-  border-radius: 50%; 
-  object-fit: cover; 
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .text_word::before {
@@ -190,8 +190,8 @@
 .cards-section {
   display: flex;
   align-items: center;
-  flex: 1;
-  /* width: 70%; */
+  /* flex: 1; */
+  width: 70%;
   /* margin: 0 20px; */
   border-radius: 20px;
   overflow: hidden;
@@ -314,11 +314,11 @@
 
 /** cards aside filter  **/
 .aside-filter {
-  /* float: right; */
-  margin-left: 0%;
+  float: right;
+  /* margin-right: 0%; */
   padding: 0%;
-  flex: 0 0 15rem;
-  /* width: 25rem; */
+  /* flex: 0 0 15rem; */
+  /* width: 30%; */
   background-color: #f7f7f7;
   border: 0.1rem solid #dbdbdb;
   border-radius: 0.4rem;
