@@ -30,13 +30,13 @@ async function init() {
   let tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
   let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
-  document.getElementById("search-date").value = tomorrowFormatted;
+  document.getElementById("tomorrow-date").value = tomorrowFormatted;
 }
 export { loadData };
 
 //  Logout
 
-let LogoutNav=document.getElementsByClassName('Logout')[0];
-let LogoutHam=document.getElementsByClassName('Logout')[1];
-LogoutNav.onclick=Logout;
-LogoutHam.onclick=Logout;
+let LogoutNav = document.getElementsByClassName("Logout")[0];
+let LogoutHam = document.getElementsByClassName("Logout")[1];
+LogoutNav.onclick = Logout;
+LogoutHam.onclick = Logout;

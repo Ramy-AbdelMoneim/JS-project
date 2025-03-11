@@ -92,9 +92,7 @@ function filterByHours(data, hours) {
   }
 }
 
-function searchFilter(data, city, date, fromHour, toHour) {
-  //input data
-  // check on it
+function searchFilter(data, city, day, fromHour, toHour) {
   let datafiltered = [];
   datafiltered = filterByCity(data, city);
   if (

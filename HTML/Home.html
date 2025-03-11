@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Football Booking</title>
     <link href="../BS/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/global.css" />
+
     <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="stylesheet" href="../CSS/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css"
+    />
+
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -62,20 +70,34 @@
                         >Contact Us</a
                       >
                     </li>
-                  </li>
-                  <li class="nav-item dropdown profile nav-Anchor d-flex align-items-center d-none">
-                    <img
-                    alt="profilepic"
-                    class="logo-img mx-1 profilepic"
-                  />
-                  <a class="nav-link dropdown-toggle usrname" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
-                    
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="DropDownUl">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item Logout" href="#">Logout</a></li>
-                  </ul>
-                </li>
+
+                    <li
+                      class="nav-item dropdown profile nav-Anchor d-flex align-items-center d-none"
+                    >
+                      <img alt="profilepic" class="logo-img mx-1 profilepic" />
+                      <a
+                        class="nav-link dropdown-toggle usrname"
+                        href="#"
+                        role="button"
+                        id="dropdownMenuLink"
+                        data-bs-toggle="dropdown"
+                      >
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuLink"
+                        id="DropDownUl"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="../HTML/Profile.html"
+                            >Profile</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item Logout" href="#">Logout</a>
+                        </li>
+                      </ul>
+                    </li>
                     <li class="nav-item font-weight-bold">
                       <a class="nav-link" href="./Login.html">Login/Singup</a>
                     </li>
@@ -117,9 +139,9 @@
                     <li class="nav-item font-weight-bold d-none profile">
                       <a class="nav-link" href="#" id="usrname/img">
                         <img
-                        alt="profilepic"
-                        class="logo-img mx-1 profilepic"
-                      />
+                          alt="profilepic"
+                          class="logo-img mx-1 profilepic"
+                        />
                         <span class="usrname"></span>
                       </a>
                     </li>
@@ -180,12 +202,14 @@
               <span class="fs-1" id="cursor">|</span>
             </h1>
             <div class="row">
-              <div class="col-7 mt-5 shadow-3">
+              <div
+                class="col-lg-6 col-md-7 col-sm-8 col-9 mt-5 shadow-3 search-container"
+              >
                 <!-- Form -->
                 <form class="form" id="searchForm">
                   <div class="row mb-6">
                     <!-- First Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                    <div class="col-12 col-md-12 mb-3 mb-lg-0 col-lg-6">
                       <select
                         name="city"
                         id="search-city"
@@ -201,39 +225,41 @@
                       </select>
                     </div>
                     <!-- Second Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                    <div class="col-12 col-md-12 mb-3 mb-lg-0 col-lg-6">
                       <input
                         type="date"
                         class="form-control"
-                        id="search-date"
+                        id="tomorrow-date"
                       />
                     </div>
                     <!-- Third Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                      <label class="col-5" for="search-from-hour">From</label>
-                      <input
-                        class="col-7"
-                        id="search-from-hour"
-                        type="time"
-                        min="00:00"
-                        max="23:00"
-                        step="3600"
-                        class="form-control"
-                        value="19:00"
-                      />
-                    </div>
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                      <label class="col-5" for="search-to-hour">To</label>
-                      <input
-                        class="col-7"
-                        id="search-to-hour"
-                        type="time"
-                        min="00:00"
-                        max="23:00"
-                        step="3600"
-                        class="form-control"
-                        value="20:00"
-                      />
+                    <div class="d-flex col-md-12 mt-3 mb-3 mb-lg-0 col-lg-12">
+                      <div class="col-6">
+                        <label class="col-5" for="search-from-hour">From</label>
+                        <input
+                          class="col-7"
+                          id="search-from-hour"
+                          type="time"
+                          min="00:00"
+                          max="23:00"
+                          step="3600"
+                          class="form-control"
+                          value="19:00"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <label class="col-5" for="search-to-hour">To</label>
+                        <input
+                          class="col-7"
+                          id="search-to-hour"
+                          type="time"
+                          min="00:00"
+                          max="23:00"
+                          step="3600"
+                          class="form-control"
+                          value="20:00"
+                        />
+                      </div>
                     </div>
                   </div>
                   <!-- Forth Form Group -->
@@ -328,9 +354,10 @@
         <button class="btn btn-danger btn-sm close-btn">X</button>
         <div id="details-body"></div>
         <hr />
+        <!-- & Booking -->
         <h4>Book Your Slot</h4>
         <form id="booking-form">
-          <label>Choose Day:</label>
+          <!-- <label>Choose Day:</label>
           <select id="booking-day" class="form-select mb-2">
             <option>Saturday</option>
             <option>Sunday</option>
@@ -339,21 +366,59 @@
             <option>Wednesday</option>
             <option>Thursday</option>
             <option>Friday</option>
-          </select>
+          </select> -->
+          <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+            <input type="date" class="form-control" />
+          </div>
+          <!-- Third Form Group -->
+          <div class="d-flex">
+            <div class="col-5 col-md-5 mb-3 mb-lg-0">
+              <label class="col-12" for="search-from-hour">From</label>
 
+              <input
+                class="col-6"
+                id="search-from-hour"
+                type="time"
+                min="00:00"
+                max="23:00"
+                step="3600"
+                class="form-control"
+                value="19:00"
+              />
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="col-5 col-md-5 mb-3 mb-lg-0">
+              <label class="col-12" for="search-to-hour">To</label>
+
+              <input
+                class="col-6"
+                id="search-to-hour"
+                type="time"
+                min="00:00"
+                max="23:00"
+                step="3600"
+                class="form-control"
+                value="20:00"
+              />
+            </div>
+          </div>
+
+          <!-- <label>From Hour:</label>
+          <select id="booking-start-hour" class="form-select mb-2"></select> -->
+          <!-- These select elements are redundant with the time inputs above
           <label>From Hour:</label>
           <select id="booking-start-hour" class="form-select mb-2"></select>
 
           <label>To Hour:</label>
           <select id="booking-end-hour" class="form-select mb-2"></select>
-
-          <label>Your Name:</label>
-          <input
+          -->
+          <!-- <input
             type="text"
             id="booking-name"
             class="form-control mb-2"
             placeholder="Enter your name"
-          />
+          /> -->
 
           <button
             type="button"

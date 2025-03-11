@@ -360,6 +360,9 @@
 }
 /*^ Tablets  **/
 @media (max-width: 768px) {
+  .search-container {
+    margin: auto;
+  }
   /* .cards-and-filter {
     flex-direction: column-reverse !important;
   } */
@@ -369,14 +372,11 @@
   } */
 }
 
-
-#DropDownUl 
-{
+#DropDownUl {
   position: absolute;
-  right:auto;
-  left:-1.5rem;
+  right: auto;
+  left: -1.5rem;
 }
-.dropdown-item:hover
-  {
-    color:wheat;
-  }
+.dropdown-item:hover {
+  color: wheat;
+}

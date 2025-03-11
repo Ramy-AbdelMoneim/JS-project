@@ -5,6 +5,13 @@
  */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
+}
+/* input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+} */
+input[type="time"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
