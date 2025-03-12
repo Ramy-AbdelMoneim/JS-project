@@ -4,7 +4,7 @@ import {
   filterByHours,
   getDayOfWeek,
 } from "./filterBy.js";
-import { loadData } from "../Scripts/Home.js";
+import { loadData } from "../modules/dataFunctions.js";
 import { makeSlider } from "./homeCardsSlider.js";
 function searchlisten() {
   document

@@ -6,14 +6,8 @@
     <title>Football Booking</title>
     <link href="../BS/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/global.css" />
-
     <link rel="stylesheet" href="../CSS/home.css" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css"
-    />
-
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -229,7 +223,7 @@
                       <input
                         type="date"
                         class="form-control"
-                        id="tomorrow-date"
+                        id="search-date"
                       />
                     </div>
                     <!-- Third Form Group -->
@@ -304,7 +298,13 @@
         </div>
         <div class="filter-rating filter-section-border">
           <h5 class="filter-section-header">Rating</h5>
-          <ul class="filter-ul"></ul>
+          <div class="rating-container" id="rating">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
         </div>
         <div class="fitler-price filter-section-border">
           <h5 class="filter-section-header">Price</h5>
@@ -319,7 +319,7 @@
               value="150"
             />
             <div class="price-display">
-              Price: <span id="price-value">150</span>EGP
+              Price: <span id="price-value">150 </span>EGP
             </div>
           </div>
         </div>
@@ -327,23 +327,151 @@
           <h5 class="filter-section-header">City</h5>
           <ul class="filter-ul">
             <li>
-              <span class="a-list-item"
-                ><div>
-                  <input type="checkbox" name="" id="" /><i
-                    class="a-icon a-icon-checkbox"
-                  ></i></div
-              ></span>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="cairo-checkbox">
+                  <input
+                    type="checkbox"
+                    name="city"
+                    id="cairo-checkbox"
+                    value="Cairo"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Cairo</span>
+                </label>
+              </span>
             </li>
-            <li></li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="alexandria-checkbox">
+                  <input
+                    type="checkbox"
+                    name="city"
+                    id="alexandria-checkbox"
+                    value="Alexandria"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Alexandria</span>
+                </label>
+              </span>
+            </li>
           </ul>
         </div>
         <div class="filter-days filter-section-border">
           <h5 class="filter-section-header">Days</h5>
-          <ul class="filter-ul"></ul>
+          <ul class="filter-ul">
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="saturday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="saturday-checkbox"
+                    value="Saturday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Saturday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="sunday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="sunday-checkbox"
+                    value="Sunday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Sunday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="monday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="monday-checkbox"
+                    value="Monday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Monday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="tuesday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="tuesday-checkbox"
+                    value="Tuesday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Tuesday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="wednesday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="wednesday-checkbox"
+                    value="Wednesday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Wednesday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="thursday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="thursday-checkbox"
+                    value="Thursday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Thursday</span>
+                </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+                <label class="checkbox-label" for="friday-checkbox">
+                  <input
+                    type="checkbox"
+                    name="day"
+                    id="friday-checkbox"
+                    value="Friday"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Friday</span>
+                </label>
+              </span>
+            </li>
+          </ul>
         </div>
         <div class="filter-hours">
           <h5 class="filter-section-header">Hours</h5>
-          <ul class="filter-ul"></ul>
+          <span class="filter-hour">
+            <input
+              class="col-6"
+              id="filter-hour"
+              type="time"
+              min="00:00"
+              max="23:00"
+              step="3600"
+              class="form-control"
+              value="19:00"
+          /></span>
         </div>
         <!-- <p>Add filters, ads, or any content here.</p> -->
       </aside>
@@ -355,29 +483,20 @@
         <div id="details-body"></div>
         <hr />
         <!-- & Booking -->
-        <h4>Book Your Slot</h4>
+        <h4 class="mb-4">Book Your Slot</h4>
         <form id="booking-form">
-          <!-- <label>Choose Day:</label>
-          <select id="booking-day" class="form-select mb-2">
-            <option>Saturday</option>
-            <option>Sunday</option>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-          </select> -->
-          <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-            <input type="date" class="form-control" />
+          <!-- ^ choosing date -->
+          <div class="col-12 col-md-6 mb-5 mb-lg-0 col-lg-5">
+            <label for="booking-date" class="">Choose date</label>
+            <input type="date" class="form-control" id="booking-date" />
           </div>
-          <!-- Third Form Group -->
-          <div class="d-flex">
+          <div class="d-flex mb-5">
+            <!-- ^ choosing from hour  -->
             <div class="col-5 col-md-5 mb-3 mb-lg-0">
               <label class="col-12" for="search-from-hour">From</label>
-
               <input
                 class="col-6"
-                id="search-from-hour"
+                id="booking-from-hour"
                 type="time"
                 min="00:00"
                 max="23:00"
@@ -387,13 +506,12 @@
               />
               <i class="fa-solid fa-arrow-right"></i>
             </div>
-
+            <!-- ^ choosing To hour  -->
             <div class="col-5 col-md-5 mb-3 mb-lg-0">
               <label class="col-12" for="search-to-hour">To</label>
-
               <input
                 class="col-6"
-                id="search-to-hour"
+                id="booking-to-hour"
                 type="time"
                 min="00:00"
                 max="23:00"
@@ -404,27 +522,10 @@
             </div>
           </div>
 
-          <!-- <label>From Hour:</label>
-          <select id="booking-start-hour" class="form-select mb-2"></select> -->
-          <!-- These select elements are redundant with the time inputs above
-          <label>From Hour:</label>
-          <select id="booking-start-hour" class="form-select mb-2"></select>
-
-          <label>To Hour:</label>
-          <select id="booking-end-hour" class="form-select mb-2"></select>
-          -->
-          <!-- <input
-            type="text"
-            id="booking-name"
-            class="form-control mb-2"
-            placeholder="Enter your name"
-          /> -->
-
           <button
             type="button"
             class="btn btn-primary btn-success"
-            id="booking"
-            onclick="submitBooking()"
+            id="book-field"
           >
             Book Now
           </button>

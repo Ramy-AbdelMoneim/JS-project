@@ -2,10 +2,33 @@
 *navbar
 *footer
 *colors
+*rating
  */
 body {
   font-family: Arial, sans-serif;
+  /* user-select: none; */
 }
+p:hover,
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  cursor: default;
+  user-select: none;
+  /* color: #somecolor; */
+  /* background-color: #somecolor; */
+}
+input:hover,
+select:hover {
+  cursor: pointer;
+}
+::selection {
+  background: none;
+  /* color: #ffffff; */
+}
+
 /* input[type="time"]::-webkit-calendar-picker-indicator {
   display: none;
 } */
@@ -14,4 +37,26 @@ input[type="time"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+/* ^ rating style */
+.rating-container {
+  display: inline-flex;
+  flex-direction: row-reverse; /* Changed to normal flow */
+  gap: 0.2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+.star {
+  color: #ddd;
+  transition: color 0.1s ease;
+}
+.star.filled {
+  color: #ffd700;
+}
+.star:hover,
+.star:hover ~ .star {
+  cursor: pointer;
+  color: #ffa500;
 }

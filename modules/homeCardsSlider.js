@@ -87,6 +87,7 @@ function makeSlider(data) {
                         .join("")}
                   </ul>
               `;
+    detailsBody.field_booking_id = field.field_id;
     fieldDetails.classList.remove("d-none");
   }
   closeButton.onclick = () => {

@@ -2,27 +2,17 @@ import { isLoggedHome } from "../modules/checkCookies.js";
 isLoggedHome();
 import { animateHeader } from "../modules/headerAnimate.js";
 animateHeader();
+import { loadData } from "../modules/dataFunctions.js";
 import { makeSlider } from "../modules/homeCardsSlider.js";
 import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
 import { Logout } from "../modules/checkCookies.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   init();
   homeSearch.searchlisten();
   filterBy.filterListen();
 });
 
-async function loadData() {
-  try {
-    const response = await fetch("../JSON/Fields.json");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error loading data:", error);
-    return [];
-  }
-}
 async function init() {
   const data = await loadData();
   makeSlider(data);
@@ -30,9 +20,8 @@ async function init() {
   let tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
   let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
-  document.getElementById("tomorrow-date").value = tomorrowFormatted;
+  document.getElementById("search-date").value = tomorrowFormatted;
 }
-export { loadData };
 
 //  Logout
 
