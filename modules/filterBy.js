@@ -1,14 +1,122 @@
+import { getCurrentData, updateData } from "../Scripts/Home.js";
+import { loadData } from "./dataFunctions.js";
+function filterListen(updateSliderFn) {
+  //^ rating
+  const stars = document.querySelectorAll(".star");
+  stars.forEach((star) => {
+    star.addEventListener("click", async () => {
+      applyFilters(updateSliderFn);
+    });
+  });
+  //^ city
+  const cairoCheckbox = document.getElementById("cairo");
+  const alexandriaCheckbox = document.getElementById("alexandria");
+  cairoCheckbox.addEventListener("change", () => applyFilters(updateSliderFn));
+  alexandriaCheckbox.addEventListener("change", () =>
+    applyFilters(updateSliderFn)
+  );
+  // ^ day
+  const dayCheckboxes = document.querySelectorAll('input[name="day"]');
+  dayCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => applyFilters(updateSliderFn));
+  });
+  //^ hour
+  const hourFilter = document.getElementById("filter-hour");
+  hourFilter.addEventListener("change", () => applyFilters(updateSliderFn));
+  //^ price
+
+  priceRange.addEventListener("input", async () => {
+    updatePrice();
+    applyFilters(updateSliderFn);
+    // let data = await getCurrentData();
+    // if (data.length === 0) {
+    //   data = await loadData();
+    // }
+    // console.log(price.value);
+    // data = filterByPrice(data, price.value);
+    // updateSliderFn(data);
+  });
+  async function applyFilters(updateSliderFn) {
+    // Get fresh data each time filters are applied
+    let data = await loadData();
+
+    // Handle star rating filtering
+    const filledStars = document.querySelectorAll(".star.filled");
+    if (filledStars.length > 0) {
+      let maxRating = 0;
+      filledStars.forEach((star) => {
+        const rating = parseInt(star.getAttribute("data-value"));
+        maxRating = Math.max(maxRating, rating);
+      });
+
+      // Ensure all stars with lower values are also filled
+      document.querySelectorAll(".star").forEach((star) => {
+        const rating = parseInt(star.getAttribute("data-value"));
+        if (rating <= maxRating) {
+          star.classList.add("filled");
+        } else {
+          star.classList.remove("filled");
+        }
+      });
+
+      data = filterByRating(data, maxRating);
+    }
+
+    const priceValue = document.getElementById("priceRange").value;
+    if (priceValue) {
+      data = filterByPrice(data, priceValue);
+    }
+
+    const cairoChecked = document.getElementById("cairo").checked;
+    const alexandriaChecked = document.getElementById("alexandria").checked;
+
+    if (cairoChecked && !alexandriaChecked) {
+      data = filterByCity(data, "Cairo");
+    } else if (!cairoChecked && alexandriaChecked) {
+      data = filterByCity(data, "Alexandria");
+    }
+
+    const dayCheckboxes = document.querySelectorAll(
+      'input[name="day"]:checked'
+    );
+    if (dayCheckboxes.length > 0) {
+      const selectedDays = Array.from(dayCheckboxes).map(
+        (checkbox) => checkbox.value
+      );
+
+      data = data.filter((item) => {
+        return selectedDays.some(
+          (day) =>
+            item.timeTable &&
+            item.timeTable[day] &&
+            item.timeTable[day].length < 24
+        );
+      });
+    }
+
+    const hourFilter = document.getElementById("filter-hour").value;
+    if (hourFilter) {
+      const hours = hourFilter.split(",").map((h) => parseInt(h.trim()));
+      data = filterByHours(data, hours);
+    }
+
+    updateSliderFn(data);
+    updateData(data);
+  }
+}
 function updatePrice() {
   let price = document.getElementById("priceRange").value;
   document.getElementById("price-value").innerText = price;
 }
-function filterListen() {
-  let price = document.getElementById("priceRange");
-  let rating = document.getElementById("priceRange");
-  let city = document.getElementById("priceRange");
-  let days = document.getElementById("priceRange");
-  let hours = document.getElementById("priceRange");
-  price.addEventListener("change", updatePrice);
+function highlightStars(rating) {
+  const stars = document.querySelectorAll(".star");
+  stars.forEach((star, index) => {
+    if (index + 1 <= rating) {
+      star.classList.add("filled");
+    } else {
+      star.classList.remove("filled");
+    }
+  });
 }
 function getDayOfWeek() {
   let dateValue = document.getElementById("search-date").value;
@@ -45,7 +153,10 @@ function filterByPrice(data, price) {
     data &&
     (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
   ) {
-    datafiltered = datafiltered.filter((el) => el.price <= price);
+    datafiltered = datafiltered.filter((el) => parseInt(el.price) <= price);
+    datafiltered = datafiltered.sort(
+      (a, b) => parseInt(b.price) - parseInt(a.price)
+    );
   }
   return datafiltered;
 }
@@ -56,7 +167,10 @@ function filterByRating(data, rating) {
     data &&
     (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
   ) {
-    datafiltered = datafiltered.filter((el) => el.rating <= rating);
+    datafiltered = datafiltered.filter(
+      (el) => el.rating >= rating - 1 && el.rating <= rating
+    );
+    datafiltered = datafiltered.sort((a, b) => b.rating - a.rating);
   }
   return datafiltered;
 }
@@ -92,14 +206,4 @@ function filterByHours(data, hours) {
   }
 }
 
-function searchFilter(data, city, day, fromHour, toHour) {
-  let datafiltered = [];
-  datafiltered = filterByCity(data, city);
-  if (
-    data &&
-    (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
-  ) {
-    datafiltered = datafiltered.filter((el) => el.city == city);
-  }
-}
 export { filterByCity, filterByDay, filterListen, getDayOfWeek, filterByHours };

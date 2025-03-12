@@ -8,11 +8,22 @@ import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
 import { Logout } from "../modules/checkCookies.js";
 let sliderUpdate;
+let originalData = [];
+let filteredData = [];
+
+export function getCurrentData() {
+  return filteredData.length > 0 ? filteredData : originalData;
+}
+
+export function updateData(newData) {
+  filteredData = newData;
+}
 
 async function init() {
   try {
-    const data = await loadData();
-    sliderUpdate = makeSlider(data);
+    const originalData = await loadData();
+    sliderUpdate = makeSlider(originalData);
+    filteredData = originalData;
     let today = new Date();
     let tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);

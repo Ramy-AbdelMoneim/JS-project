@@ -109,18 +109,7 @@ input[type="time"] {
     opacity: 1;
   }
 }
-.btn-primary {
-  background-color: chartreuse;
-  border-color: chartreuse;
-}
-.btn {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 30px;
-  font-size: 14px;
-}
+
 #DropDownUl {
   position: absolute;
   right: auto;
@@ -135,7 +124,7 @@ input[type="time"] {
 /* ^ rating style */
 .rating-container {
   display: inline-flex;
-  flex-direction: row-reverse; /* Changed to normal flow */
+  flex-direction: row;
   gap: 0.1rem;
   font-size: 1.5em;
   cursor: pointer;
@@ -145,13 +134,19 @@ input[type="time"] {
   color: #ddd;
   transition: color 0.1s ease;
 }
-.star.filled {
-  color: #ffd700;
-}
-.star:hover,
-.star:hover ~ .star {
+.star:hover {
   cursor: pointer;
-  color: #ffa500;
+  color: #00318b;
+}
+.star:hover ~ .star[data-value]:not([data-value=""]) {
+  color: #ddd;
+}
+.star:hover {
+  cursor: pointer;
+  color: #00318b;
+}
+.star.filled {
+  color: #00318b;
 }
 
 /* Footer Styles */

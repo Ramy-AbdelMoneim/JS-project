@@ -1,20 +1,19 @@
-import {
-  filterByCity,
-  filterByDay,
-  filterByHours,
-  getDayOfWeek,
-} from "./filterBy.js";
+import { filterByCity, filterByDay, filterByHours } from "./filterBy.js";
 import { loadData } from "../modules/dataFunctions.js";
+import { getCurrentData, updateData } from "../Scripts/Home.js";
 function searchlisten(updateSliderFn) {
   document
     .getElementById("searchForm")
     .addEventListener("submit", function (event) {
       event.preventDefault(); //  Prevent form from submitting & reloading
     });
-  const searchBtn = document.getElementById("home-search-btn");
 
+  const searchBtn = document.getElementById("home-search-btn");
   searchBtn.addEventListener("click", async () => {
-    let data = await loadData();
+    const data = await getCurrentData();
+    if (data.length === 0) {
+      data = await loadData();
+    }
     const city = document.getElementById("search-city").value;
     let fromHour = parseInt(document.getElementById("search-from-hour").value);
     let toHour = parseInt(document.getElementById("search-to-hour").value);
@@ -22,9 +21,14 @@ function searchlisten(updateSliderFn) {
     for (let i = fromHour; i < toHour; i++) {
       hours.push(i);
     }
-    data = filterByHours(filterByDay(filterByCity(data, city)), hours);
 
-    updateSliderFn(data);
+    const result = filterByHours(
+      filterByDay(filterByCity(originalData, city)),
+      hours
+    );
+
+    updateData(result);
+    updateSliderFn(result);
   });
 }
 

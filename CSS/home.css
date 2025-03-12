@@ -1,75 +1,7 @@
-.bg-yellowgreen {
-  background-color: yellowgreen;
-}
-.bg-lowopacity {
-  background-color: rgba(255, 255, 255, 0.596);
-}
-
-.logo-img {
-  width: 2rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.text_word::before {
-  position: absolute;
-  height: 7px;
-  background-color: rgba(169, 247, 135, 0.649);
-  border-radius: 5px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: "";
-}
-.imgtop {
-  border-radius: 250px !important;
-  position: absolute;
-  top: 0;
-  transition: opacity 2.5s ease-in-out;
-}
-.ztop {
-  z-index: 1;
-}
-.intro-wrap {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.change {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 1rem;
-  background-color: yellowgreen;
-  z-index: 0;
-}
-.none-work {
-  opacity: 0;
-  z-index: -1;
-}
-.work {
-  opacity: 1;
-  z-index: 1;
-}
-#cursor {
-  animation: blink 0.9s infinite;
-}
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .btn-primary {
-  background-color: chartreuse;
-  border-color: chartreuse;
+  font-size: 2rem;
+  background-color: #19742e;
+  border-color: #19742e;
 }
 .btn {
   padding-top: 12px;
@@ -135,59 +67,10 @@
   font-weight: 700;
 }
 
-/* Footer Styles */
-.footer-48201 {
-  background-color: #343a40; /* Dark background */
-  color: white;
-  padding: 50px 0;
-}
-
-/* Make headers green */
-.footer-48201 h3 {
-  color: #28a745; /* Football green */
-}
-
-/* Style for links */
-.footer-48201 a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.footer-48201 a:hover {
-  color: #28a745; /* Green hover effect */
-}
-
-/* Social Icons */
-.footer-48201 .social a {
-  color: white; /* Default color */
-  font-size: 18px;
-  margin-right: 10px;
-  display: inline-block;
-  transition: color 0.3s ease-in-out;
-}
-
-.footer-48201 .social a:hover {
-  color: #28a745; /* Green on hover */
-}
-
-/* Footer links */
-.footer-48201 .list-unstyled li {
-  margin-bottom: 8px;
-}
-
-.footer-48201 .list-unstyled a {
-  font-size: 16px;
-}
-
-/* Centering the copyright text */
-.footer-48201 .text-center p {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #cccccc;
-}
 .cards-and-filter {
   margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .cards-section {
   background-color: #f7f7f7;
@@ -209,10 +92,16 @@
 .cards-wrapper {
   display: flex;
   transition: transform 0.5s ease;
+  width: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
 }
-
+.cards-wrapper.centered {
+  justify-content: center;
+}
 .card {
-  flex: 0 0 calc(100% / 6); /* 3 cards per view */
+  flex: 0 0 calc((100% - 2rem) / 4);
+  min-width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
   background: #f8f9fa;
@@ -259,8 +148,8 @@
 }
 
 .indicator {
-  width: 1rem;
-  height: 1rem;
+  width: 0.7rem;
+  height: 0.7rem;
   background-color: #ccc;
   margin: 0 5px;
   border-radius: 50%;
@@ -341,9 +230,7 @@
   font-weight: 500;
   text-align: left;
 }
-.aside-filter div {
-  /* margin: 0.2rem 0.3rem; */
-}
+
 .aside-header {
   font-size: 1.3rem;
   padding: 0.6rem 0.5rem;
@@ -382,6 +269,9 @@
   background-color: #4a5f4f3a;
   border-radius: 0.4rem;
 }
+.filter-hours {
+  padding-bottom: 1rem;
+}
 /* Style for when checkbox is checked */
 .filter-ul li input[type="checkbox"]:checked {
   accent-color: #dbdbdb;
@@ -415,6 +305,9 @@
     width: 100%;
     margin-bottom: 1rem;
   }
+  .card {
+    flex: 0 0 calc((100% - 1rem) / 4);
+  }
 }
 @media (max-width: 768px) {
   .search-container {
@@ -422,6 +315,9 @@
   }
   .cards-wrapper {
     margin-bottom: 4rem;
+  }
+  .card {
+    flex: 0 0 calc(100% - 2rem) / 2;
   }
 }
 @media (max-width: 550px) {
