@@ -133,8 +133,46 @@ function makeSlider(data) {
       indicatorsContainer.appendChild(dot);
     }
   }
+  function updateContent(newData) {
+    // Reset position
+    currentSlide = 0;
+    wrapper.style.transform = "translateX(0)";
+    wrapper.innerHTML = "";
 
+    // Update data and create new cards
+    fieldsData = newData;
+    const maxItems = Math.min(newData.length, 10);
+    totalCards = maxItems;
+    totalSlides = Math.ceil(totalCards / cardsPerPage);
+
+    newData.slice(0, maxItems).forEach((item, index) => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width:100%;height:150px;object-fit:cover;">
+            <h3>${item.name}</h3>
+            <p><strong>Rating:</strong> ⭐ ${item.rating}</p>
+            <p><strong>Phone:</strong> ${item.phoneNumber}</p>
+            <button class="btn btn-primary view-details-btn cardbtn" data-index="${index}">
+                ${item.price} EGP/hour
+            </button>
+        `;
+      wrapper.appendChild(card);
+    });
+
+    // Reattach event listeners
+    document.querySelectorAll(".view-details-btn").forEach((btn) => {
+      btn.onclick = (e) => {
+        const index = e.target.getAttribute("data-index");
+        showDetails(fieldsData[index]);
+      };
+    });
+
+    updateIndicators();
+    updateSlider();
+  }
   prevBtn.onclick = prevSlide;
   nextBtn.onclick = nextSlide;
+  return updateContent;
 }
 export { makeSlider };

@@ -7,22 +7,27 @@ import { makeSlider } from "../modules/homeCardsSlider.js";
 import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
 import { Logout } from "../modules/checkCookies.js";
-document.addEventListener("DOMContentLoaded", () => {
-  init();
-  homeSearch.searchlisten();
-  filterBy.filterListen();
-});
+let sliderUpdate;
 
 async function init() {
-  const data = await loadData();
-  makeSlider(data);
-  let today = new Date();
-  let tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
-  let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
-  document.getElementById("search-date").value = tomorrowFormatted;
+  try {
+    const data = await loadData();
+    sliderUpdate = makeSlider(data);
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
+    document.getElementById("search-date").value = tomorrowFormatted;
+  } catch (error) {
+    console.error("Initialization error:", error);
+  }
 }
 
+document.addEventListener("DOMContentLoaded", async () => {
+  await init();
+  homeSearch.searchlisten(sliderUpdate);
+  filterBy.filterListen(sliderUpdate);
+});
 //  Logout
 
 let LogoutNav = document.getElementsByClassName("Logout")[0];
