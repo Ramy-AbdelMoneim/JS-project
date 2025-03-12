@@ -5,6 +5,26 @@ function filterListen(updateSliderFn) {
   const stars = document.querySelectorAll(".star");
   stars.forEach((star) => {
     star.addEventListener("click", async () => {
+      const clickedRating = parseInt(star.getAttribute("data-value"));
+
+      if (star.classList.contains("filled")) {
+        stars.forEach((s) => {
+          s.classList.add("default");
+          s.classList.remove("filled");
+        });
+      } else {
+        stars.forEach((s) => {
+          const starValue = parseInt(s.getAttribute("data-value"));
+          if (starValue <= clickedRating) {
+            s.classList.add("filled");
+            s.classList.remove("default");
+          } else {
+            s.classList.remove("filled");
+            s.classList.add("default");
+          }
+        });
+      }
+
       applyFilters(updateSliderFn);
     });
   });
@@ -28,19 +48,11 @@ function filterListen(updateSliderFn) {
   priceRange.addEventListener("input", async () => {
     updatePrice();
     applyFilters(updateSliderFn);
-    // let data = await getCurrentData();
-    // if (data.length === 0) {
-    //   data = await loadData();
-    // }
-    // console.log(price.value);
-    // data = filterByPrice(data, price.value);
-    // updateSliderFn(data);
   });
   async function applyFilters(updateSliderFn) {
     // Get fresh data each time filters are applied
     let data = await loadData();
 
-    // Handle star rating filtering
     const filledStars = document.querySelectorAll(".star.filled");
     if (filledStars.length > 0) {
       let maxRating = 0;
@@ -48,17 +60,6 @@ function filterListen(updateSliderFn) {
         const rating = parseInt(star.getAttribute("data-value"));
         maxRating = Math.max(maxRating, rating);
       });
-
-      // Ensure all stars with lower values are also filled
-      document.querySelectorAll(".star").forEach((star) => {
-        const rating = parseInt(star.getAttribute("data-value"));
-        if (rating <= maxRating) {
-          star.classList.add("filled");
-        } else {
-          star.classList.remove("filled");
-        }
-      });
-
       data = filterByRating(data, maxRating);
     }
 
@@ -96,8 +97,12 @@ function filterListen(updateSliderFn) {
 
     const hourFilter = document.getElementById("filter-hour").value;
     if (hourFilter) {
-      const hours = hourFilter.split(",").map((h) => parseInt(h.trim()));
-      data = filterByHours(data, hours);
+      const hour = hourFilter.split(",").map((h) => parseInt(h.trim()));
+      // Get checked days or fallback to default day
+      const selectedDay =
+        document.querySelector('input[name="day"]:checked')?.value ||
+        getDayOfWeek();
+      data = filterByHours(data, hour, selectedDay);
     }
 
     updateSliderFn(data);
@@ -185,8 +190,7 @@ function filterByDay(data, day = getDayOfWeek()) {
   }
   return datafiltered;
 }
-function filterByHours(data, hours) {
-  let day = getDayOfWeek();
+function filterByHours(data, hours, day = getDayOfWeek()) {
   if (
     data &&
     (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)
