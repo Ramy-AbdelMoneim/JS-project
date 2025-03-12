@@ -1,9 +1,7 @@
-
-
 let formsubmit = document.forms[0];
 let cookies = [];
 let usrname;
-let loginForm=document.getElementById("loginform")
+let loginForm=document.getElementById("loginForm");
 formsubmit.onsubmit = function (event) {
     event.preventDefault();
     let Mail = document.getElementById("InputEmail").value;
@@ -32,9 +30,17 @@ formsubmit.onsubmit = function (event) {
             alert("Invalid Email or Password")
         }
         else {
-            // getcookies();
             alert(`Welcome back, ${usrname}`)
-            loginForm.action=history.go(-1);
+            if(document.referrer.includes("Register"))
+            {
+                
+                location.assign("../HTML/Home.html")
+            }
+            else
+            {
+                history.go(-1);
+            }
+            
         }
 
 
