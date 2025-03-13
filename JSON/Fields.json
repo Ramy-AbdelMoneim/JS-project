@@ -1,11 +1,12 @@
 [
   {
+    "field_id": 1,
     "name": "Stia",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipNJIZY0vY85c4qwyoMP47A24EGyle-Np85BFiKw=s680-w680-h510",
     "rating": "3.8",
     "location": "31.2098232,29.9397831",
-    "price": "150 EGP",
+    "price": "150",
     "timeTable": {
       "Saturday": [
         { "hour": 10, "reserved": true, "user": "Ramy" },
@@ -20,14 +21,14 @@
     },
     "phoneNumber": "0155536458"
   },
-
   {
+    "field_id": 2,
     "name": "Stadium Media",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipNtCX2VO9nT7Xz2D9JGnEExQM3AmO1CGhsiVHBX=s680-w680-h510",
     "rating": "4.7",
     "location": "31.2031957,29.9401066",
-    "price": "250 EGP",
+    "price": "250 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [
@@ -43,12 +44,13 @@
     "phoneNumber": "01111223344"
   },
   {
+    "field_id": 3,
     "name": "ملعب سيد البلد",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipOuG4R60HEyARwMTcjCqBlmxbb5c-JoZ_GyrtS9=s680-w680-h510",
     "rating": "2.5",
     "location": "31.2667387,30.0192621",
-    "price": "180 EGP",
+    "price": "180 ",
     "timeTable": {
       "Saturday": [{ "hour": 11, "reserved": true, "user": "Omar" }],
       "Sunday": [],
@@ -61,12 +63,13 @@
     "phoneNumber": "01222334455"
   },
   {
+    "field_id": 4,
     "name": "ملعب بايرن ميونيخ",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/sN7HmJeghQHXP_Ck1774Dd1IBVgesZkW0z7j62amCGovGubnnshWJi-PJhbn_fQ=s680-w680-h510",
     "rating": "4.1",
     "location": "31.2582022,30.0113627",
-    "price": "220 EGP",
+    "price": "220 ",
     "timeTable": {
       "Saturday": [{ "hour": 10, "reserved": true, "user": "Ramy" }],
       "Sunday": [],
@@ -79,12 +82,13 @@
     "phoneNumber": "01277070598"
   },
   {
+    "field_id": 5,
     "name": "Maracana Academy",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipNEgn8IF-zbOOvHou-AMlfnZUoHSFKciTlLYhrF=s680-w680-h510",
     "rating": "4.1",
     "location": "31.2461559,29.9981386",
-    "price": "190 EGP",
+    "price": "190 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [{ "hour": 12, "reserved": true, "user": "John" }],
@@ -97,12 +101,13 @@
     "phoneNumber": "01011779419"
   },
   {
+    "field_id": 6,
     "name": "Roma Stadium",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipO_-da5cnRu89AKaZI4LKCrfPvN8S1gyf_p8wOn=s680-w680-h510",
     "rating": "4.1",
     "location": "31.2538198,30.013092",
-    "price": "210 EGP",
+    "price": "210 ",
     "timeTable": {
       "Saturday": [{ "hour": 11, "reserved": true, "user": "Kero" }],
       "Sunday": [],
@@ -115,12 +120,13 @@
     "phoneNumber": "01281825749"
   },
   {
+    "field_id": 7,
     "name": "Liverpool stadium",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipPQpSfp4FfcQ2s3OIir07vURFZjFYpVE7RP7KNn=s680-w680-h510",
     "rating": "4.1",
     "location": "31.2543711,30.010946",
-    "price": "170 EGP",
+    "price": "170 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [{ "hour": 12, "reserved": true, "user": "John" }],
@@ -133,12 +139,13 @@
     "phoneNumber": "01289277782"
   },
   {
+    "field_id": 8,
     "name": "Sidi Beshr Club Playground",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipNdgihkYHnqPs1FlmsR9wb-BZ5dDeoGN59X2icD=s680-w680-h510",
     "rating": "4.0",
     "location": "31.2571613,29.9826397",
-    "price": "230 EGP",
+    "price": "230 ",
     "timeTable": {
       "Saturday": [{ "hour": 10, "reserved": true, "user": "Kero" }],
       "Sunday": [],
@@ -151,12 +158,13 @@
     "phoneNumber": "01055667788"
   },
   {
+    "field_id": 9,
     "name": "ملعب أليكس سبورت",
     "city": "Alexandria",
     "image": "https://lh3.googleusercontent.com/p/AF1QipNrIXpslGvOeK_kRVtCEjA_T__aD3lYLuJrzmIY=s680-w680-h510",
     "rating": "4.2",
     "location": "31.2467785,29.992961",
-    "price": "160 EGP",
+    "price": "160 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [{ "hour": 12, "reserved": true, "user": "Ramy" }],
@@ -169,12 +177,13 @@
     "phoneNumber": "01122334455"
   },
   {
+    "field_id": 10,
     "name": "Nasr City 5x5 Field",
     "city": "Cairo",
     "image": "",
     "rating": "4.8",
     "location": "30.0500,31.3300",
-    "price": "300 EGP",
+    "price": "300 ",
     "timeTable": {
       "Saturday": [{ "hour": 10, "reserved": true, "user": "Omar" }],
       "Sunday": [],
@@ -187,12 +196,13 @@
     "phoneNumber": "01012345678"
   },
   {
+    "field_id": 11,
     "name": "Zamalek 5x5 Field",
     "city": "Cairo",
     "image": "",
     "rating": "4.9",
     "location": "30.0600,31.3400",
-    "price": "350 EGP",
+    "price": "350 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [{ "hour": 12, "reserved": true, "user": "Kero" }],
@@ -205,12 +215,13 @@
     "phoneNumber": "01123456789"
   },
   {
+    "field_id": 12,
     "name": "Mohandessin 5x5 Field",
     "city": "Cairo",
     "image": "",
     "rating": "4.7",
     "location": "30.0700,31.3500",
-    "price": "280 EGP",
+    "price": "280 ",
     "timeTable": {
       "Saturday": [{ "hour": 11, "reserved": true, "user": "John" }],
       "Sunday": [],
@@ -223,12 +234,13 @@
     "phoneNumber": "01098765432"
   },
   {
+    "field_id": 13,
     "name": "Maadi 5x5 Field",
     "city": "Cairo",
     "image": "",
     "rating": "4.5",
     "location": "30.0800,31.3600",
-    "price": "260 EGP",
+    "price": "260 ",
     "timeTable": {
       "Saturday": [],
       "Sunday": [{ "hour": 12, "reserved": true, "user": "Kero" }],
@@ -241,12 +253,13 @@
     "phoneNumber": "01111223344"
   },
   {
+    "field_id": 14,
     "name": "Tagamo3 5x5 Field",
     "city": "Cairo",
     "image": "",
     "rating": "4.6",
     "location": "30.0900,31.3700",
-    "price": "320 EGP",
+    "price": "320 ",
     "timeTable": {
       "Saturday": [{ "hour": 10, "reserved": true, "user": "John" }],
       "Sunday": [],

@@ -2,9 +2,201 @@
 *navbar
 *footer
 *colors
+*rating
  */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
+  /* user-select: none; */
+}
+p:hover,
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover {
+  cursor: default;
+  user-select: none;
+  /* color: #somecolor; */
+  /* background-color: #somecolor; */
+}
+input:hover,
+select:hover {
+  cursor: pointer;
+}
+::selection {
+  background: none;
+  /* color: #ffffff; */
+}
+
+/* input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+} */
+input[type="time"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* start of header style */
+.bg-yellowgreen {
+  background-color: yellowgreen;
+}
+.bg-lowopacity {
+  background-color: rgba(255, 255, 255, 0.596);
+}
+
+.logo-img {
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text_word::before {
+  position: absolute;
+  height: 7px;
+  background-color: rgba(169, 247, 135, 0.649);
+  border-radius: 5px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+}
+.imgtop {
+  border-radius: 250px !important;
+  position: absolute;
+  top: 0;
+  transition: opacity 2.5s ease-in-out;
+}
+.ztop {
+  z-index: 1;
+}
+.intro-wrap {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.change {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 1rem;
+  background-color: yellowgreen;
+  z-index: 0;
+}
+.none-work {
+  opacity: 0;
+  z-index: -1;
+}
+.work {
+  opacity: 1;
+  z-index: 1;
+}
+#cursor {
+  animation: blink 0.9s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#DropDownUl {
+  position: absolute;
+  right: auto;
+  left: -1.5rem;
+}
+.dropdown-item:hover {
+  color: wheat;
+}
+
+/* end of header style */
+
+/* ^ rating style */
+.rating-container {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.1rem;
+  font-size: 1.5em;
+  cursor: pointer;
+  user-select: none;
+}
+.star {
+  color: #ddd;
+  transition: color 0.1s ease;
+}
+.star:hover {
+  cursor: pointer;
+  color: #00318b;
+}
+.star:hover ~ .star[data-value]:not([data-value=""]) {
+  color: #ddd;
+}
+.star:hover {
+  cursor: pointer;
+  color: #00318b;
+}
+.star.filled {
+  color: #00318b;
+}
+
+/* Footer Styles */
+.footer-48201 {
+  background-color: #343a40; /* Dark background */
+  color: white;
+  padding: 50px 0;
+}
+
+/* Make headers green */
+.footer-48201 h3 {
+  color: #28a745; /* Football green */
+}
+
+/* Style for links */
+.footer-48201 a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 a:hover {
+  color: #28a745; /* Green hover effect */
+}
+
+/* Social Icons */
+.footer-48201 .social a {
+  color: white; /* Default color */
+  font-size: 18px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-48201 .social a:hover {
+  color: #28a745; /* Green on hover */
+}
+
+/* Footer links */
+.footer-48201 .list-unstyled li {
+  margin-bottom: 8px;
+}
+
+.footer-48201 .list-unstyled a {
+  font-size: 16px;
+}
+
+/* Centering the copyright text */
+.footer-48201 .text-center p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #cccccc;
 }
