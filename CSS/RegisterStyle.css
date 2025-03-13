@@ -1,62 +1,52 @@
 @keyframes form {
-    from {
-        transform: translate(-50%, -100%);
-        opacity: 0;
-    }
-    to {
-        transform: translate(-50%, 40%);
-        opacity: 1;
-    }
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 40%);
+    opacity: 1;
+  }
 }
 
 #loginForm {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -100%);
-    opacity: 0;
-    animation: form 2.5s ease-out forwards;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  animation: form 2.5s ease-out forwards;
 }
-.fontColor
-{
-    color: yellowgreen;
+.fontColor {
+  color: yellowgreen;
 }
-.header2ndfont
-{
-    position: relative;
-    top: -1em;
-    font-family: "Imperial Script", serif;
-
+.header2ndfont {
+  position: relative;
+  top: -1em;
+  font-family: "Imperial Script", serif;
 }
-.btncolor
-{
-    background-color: yellowgreen;
-    color: white;
-
+.btncolor {
+  background-color: yellowgreen;
+  color: white;
 }
 
-.btncolor:hover
-{
-    background-color: green;
-    color: white;
+.btncolor:hover {
+  background-color: green;
+  color: white;
 }
 
-.navbarbg
-{
-    background-image: url(../Images/grass.avif);
-    color:white;
+.navbarbg {
+  background-image: url(../Images/grass.avif);
+  color: white;
 }
 
-.nav-Anchor>a
-{
-    color:white;
+.nav-Anchor > a {
+  color: white;
 }
-.nav-Anchor>a:hover
-{
-    color:wheat;
+.nav-Anchor > a:hover {
+  color: wheat;
 }
 
-.green-bg
-{
-    background-color: grey;
+.green-bg {
+  background-color: grey;
 }

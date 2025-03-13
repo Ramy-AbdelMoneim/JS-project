@@ -1,28 +1,35 @@
 {
     "ramy@gmail.com" :
 		{
-            "username": "Ramy",
+            "Username": "Ramy",
 			"Email" : "Ramy@gmail.com",
-			"Password" : "123"
+			"Password" : "123",
+			"Profile": "../Images/ramy.JPG"
         },
 	"kero@gmail.com" : 
 		{
-            "username": "Kero",
+            "Username": "Kero",
 			"Email" : "Kero@gmail.com",
-			"Password" : "123"
+			"Password" : "123",
+			"Profile": "../Images/kiro.JPEG"
+
         }
 	,
 	"friga@gmail.com" : 
 		{
-            "username": "Omar",
+            "Username": "Omar",
 			"Email" : "Friga@gmail.com",
-			"Password" : "123"
+			"Password" : "123",
+			"Profile": "../Images/omar.JPEG"
+
 		}
 	,
 	"john@gmail.com" :
 		{
-            "username": "John",
+            "Username": "John",
 			"Email" : "John@gmail.com",
-			"Password" : "123"
+			"Password" : "123",
+			"Profile": "../Images/john.JPG"
+
 		}
 }

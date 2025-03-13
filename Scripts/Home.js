@@ -2,33 +2,46 @@ import { isLoggedHome } from "../modules/checkCookies.js";
 isLoggedHome();
 import { animateHeader } from "../modules/headerAnimate.js";
 animateHeader();
+import { loadData } from "../modules/dataFunctions.js";
 import { makeSlider } from "../modules/homeCardsSlider.js";
 import * as filterBy from "../modules/filterBy.js";
 import * as homeSearch from "../modules/homeSearch.js";
+import { Logout } from "../modules/checkCookies.js";
+let sliderUpdate;
+let originalData = [];
+let filteredData = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-  init();
-  homeSearch.searchlisten();
-  filterBy.filterListen();
-});
+export function getCurrentData() {
+  return filteredData.length > 0 ? filteredData : originalData;
+}
 
-async function loadData() {
+export function updateData(newData) {
+  filteredData = newData;
+}
+
+async function init() {
   try {
-    const response = await fetch("../JSON/Fields.json");
-    const data = await response.json();
-    return data;
+    const originalData = await loadData();
+    sliderUpdate = makeSlider(originalData);
+    filteredData = originalData;
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
+    document.getElementById("search-date").value = tomorrowFormatted;
   } catch (error) {
-    console.error("Error loading data:", error);
-    return [];
+    console.error("Initialization error:", error);
   }
 }
-async function init() {
-  const data = await loadData();
-  makeSlider(data);
-  let today = new Date();
-  let tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
-  let tomorrowFormatted = tomorrow.toISOString().split("T")[0];
-  document.getElementById("search-date").value = tomorrowFormatted;
-}
-export { loadData };
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await init();
+  homeSearch.searchlisten(sliderUpdate);
+  filterBy.filterListen(sliderUpdate);
+});
+//  Logout
+
+let LogoutNav = document.getElementsByClassName("Logout")[0];
+let LogoutHam = document.getElementsByClassName("Logout")[1];
+LogoutNav.onclick = Logout;
+LogoutHam.onclick = Logout;

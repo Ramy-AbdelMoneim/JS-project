@@ -1,8 +1,7 @@
-
-
 let formsubmit = document.forms[0];
 let cookies = [];
 let usrname;
+let loginForm=document.getElementById("loginForm");
 formsubmit.onsubmit = function (event) {
     event.preventDefault();
     let Mail = document.getElementById("InputEmail").value;
@@ -20,8 +19,9 @@ formsubmit.onsubmit = function (event) {
         for (let i in usersdata) {
             if (Mail == i && Password == usersdata[i].Password) {
                 // console.log("Login Successful")
-                document.cookie = `usrname=${usersdata[i].username}`
-                usrname = usersdata[i].username;
+                document.cookie = `usrname=${usersdata[i].Username}`
+                localStorage.setItem("profilepic",usersdata[i].Profile)
+                usrname = usersdata[i].Username;
                 login = true;
                 break;
             }
@@ -30,9 +30,17 @@ formsubmit.onsubmit = function (event) {
             alert("Invalid Email or Password")
         }
         else {
-            // getcookies();
             alert(`Welcome back, ${usrname}`)
-            formsubmit.submit();
+            if(document.referrer.includes("Register"))
+            {
+                
+                location.assign("../HTML/Home.html")
+            }
+            else
+            {
+                history.go(-1);
+            }
+            
         }
 
 
@@ -43,3 +51,5 @@ formsubmit.onsubmit = function (event) {
     )
 
 }
+
+

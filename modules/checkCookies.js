@@ -1,5 +1,5 @@
 //if logged in remove login button and display img and name switch disabled button
-
+import { book } from "./booking.js";
 function hascookie(input) {
   let allcookies = document.cookie.split(";");
   for (let i = 0; i < allcookies.length; i++) {
@@ -26,8 +26,9 @@ let login = document.getElementById("navbarUl");
 let ham = document.getElementById("hamUl");
 let profile = document.getElementsByClassName("profile");
 let usrname = document.getElementsByClassName("usrname");
-let cardbtn = document.getElementsByClassName("cardbtn");
-let booking = document.getElementById("booking");
+let booking = document.getElementById("book-field");
+let profilepic = document.getElementsByClassName("profilepic");
+let hamlogout = document.getElementsByClassName("Logout")[1];
 //if logged in
 function isLogged() {
   if (hascookie("usrname")) {
@@ -39,6 +40,10 @@ function isLogged() {
     profile[0].classList.remove("d-none");
     usrname[1].innerHTML = getcookie("usrname");
     profile[1].classList.remove("d-none");
+    profilepic[0].src = localStorage.getItem("profilepic");
+    profilepic[1].src = localStorage.getItem("profilepic");
+    hamlogout.classList.remove("d-none");
+
     // console.log(document.getElementsByClassName("cardbtn"))
   }
 }
@@ -52,7 +57,10 @@ function isLoggedHome() {
     profile[0].classList.remove("d-none");
     usrname[1].innerHTML = getcookie("usrname");
     profile[1].classList.remove("d-none");
-    // console.log(document.getElementsByClassName("cardbtn"))
+    profilepic[0].src = localStorage.getItem("profilepic");
+    profilepic[1].src = localStorage.getItem("profilepic");
+    hamlogout.classList.remove("d-none");
+    booking.addEventListener("click", book);
   } else {
     booking.addEventListener("click", function () {
       if (confirm("You need to be logged in first \n Do you want to login?")) {
@@ -61,4 +69,17 @@ function isLoggedHome() {
     });
   }
 }
-export { isLoggedHome, isLogged };
+
+function Logout() {
+  let allcookies = document.cookie.split(";");
+  let date = new Date();
+  date.setMonth = date.getMonth() - 1;
+  document.getElementsByClassName("profile")[0].classList.add("d-none");
+  hamlogout.classList.add("d-none");
+  history.go(0);
+  for (let i = 0; i < allcookies.length; i++) {
+    var [key, value] = allcookies[i].split("=");
+    document.cookie = key + "=;expires=" + date.toUTCString();
+  }
+}
+export { isLoggedHome, isLogged, Logout, hascookie };

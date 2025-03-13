@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Football Booking</title>
     <link href="../BS/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/global.css" />
     <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="stylesheet" href="../CSS/all.min.css" />
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -62,18 +64,36 @@
                         >Contact Us</a
                       >
                     </li>
-                    <li class="nav-item font-weight-bold d-none profile">
-                      <a class="nav-link" href="#" id="usrname/img">
-                        <img
-                          src="../Images/about-slide-1-1.jpg"
-                          alt="Logo"
-                          class="logo-img"
-                        />
-                        <span class="usrname"></span>
+
+                    <li
+                      class="nav-item dropdown profile nav-Anchor d-flex align-items-center d-none"
+                    >
+                      <img alt="profilepic" class="logo-img mx-1 profilepic" />
+                      <a
+                        class="nav-link dropdown-toggle usrname"
+                        href="#"
+                        role="button"
+                        id="dropdownMenuLink"
+                        data-bs-toggle="dropdown"
+                      >
                       </a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuLink"
+                        id="DropDownUl"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="../HTML/Profile.html"
+                            >Profile</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item Logout" href="#">Logout</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item font-weight-bold">
-                      <a class="nav-link" href="./Login.html">Login/Singup</a>
+                      <a class="nav-link" href="./Login.html">Login/SignUp</a>
                     </li>
                   </ul>
                 </div>
@@ -113,9 +133,8 @@
                     <li class="nav-item font-weight-bold d-none profile">
                       <a class="nav-link" href="#" id="usrname/img">
                         <img
-                          src="../Images/about-slide-1-1.jpg"
-                          alt="Logo"
-                          class="logo-img"
+                          alt="profilepic"
+                          class="logo-img mx-1 profilepic"
                         />
                         <span class="usrname"></span>
                       </a>
@@ -124,13 +143,16 @@
                       <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
+                      <a class="nav-link" href="./about.html">About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Contact US</a>
+                      <a class="nav-link" href="./ContactUs.html">Contact US</a>
+                    </li>
+                    <li class="nav-item d-none Logout">
+                      <a class="nav-link" href="#">Logout</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Login / Singup</a>
+                      <a class="nav-link" href="./Login.html">Login/SignUp</a>
                     </li>
                   </ul>
                 </div>
@@ -174,19 +196,21 @@
               <span class="fs-1" id="cursor">|</span>
             </h1>
             <div class="row">
-              <div class="col-7 mt-5 shadow-3">
+              <div
+                class="col-lg-6 col-md-7 col-sm-8 col-9 mt-5 shadow-3 search-container"
+              >
                 <!-- Form -->
                 <form class="form" id="searchForm">
                   <div class="row mb-6">
                     <!-- First Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                    <div class="col-12 col-md-12 mb-3 mb-lg-0 col-lg-6">
                       <select
                         name="city"
                         id="search-city"
                         class="form-control custom-select"
                       >
                         <option value="Cairo">Cairo</option>
-                        <option value="Alex">ALex</option>
+                        <option value="Alexandria">Alexandria</option>
                         <!-- <option value="Aswan">Aswan</option>
                         <option value="Elfayom">Elfayom</option>
                         <option value="Mansora">Mansora</option>
@@ -195,7 +219,7 @@
                       </select>
                     </div>
                     <!-- Second Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                    <div class="col-12 col-md-12 mb-3 mb-lg-0 col-lg-6">
                       <input
                         type="date"
                         class="form-control"
@@ -203,31 +227,33 @@
                       />
                     </div>
                     <!-- Third Form Group -->
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                      <label class="col-5" for="search-from-hour">From</label>
-                      <input
-                        class="col-7"
-                        id="search-from-hour"
-                        type="time"
-                        min="00:00"
-                        max="23:00"
-                        step="3600"
-                        class="form-control"
-                        value="19:00"
-                      />
-                    </div>
-                    <div class="col-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-                      <label class="col-5" for="search-to-hour">To</label>
-                      <input
-                        class="col-7"
-                        id="search-to-hour"
-                        type="time"
-                        min="00:00"
-                        max="23:00"
-                        step="3600"
-                        class="form-control"
-                        value="20:00"
-                      />
+                    <div class="d-flex col-md-12 mt-3 mb-3 mb-lg-0 col-lg-12">
+                      <div class="col-6">
+                        <label class="col-5" for="search-from-hour">From</label>
+                        <input
+                          class="col-7"
+                          id="search-from-hour"
+                          type="time"
+                          min="00:00"
+                          max="23:00"
+                          step="3600"
+                          class="form-control"
+                          value="19:00"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <label class="col-5" for="search-to-hour">To</label>
+                        <input
+                          class="col-7"
+                          id="search-to-hour"
+                          type="time"
+                          min="00:00"
+                          max="23:00"
+                          step="3600"
+                          class="form-control"
+                          value="20:00"
+                        />
+                      </div>
                     </div>
                   </div>
                   <!-- Forth Form Group -->
@@ -262,6 +288,7 @@
         <div class="cards-wrapper" id="cards-container">
           <!-- Cards will be inserted by JS -->
         </div>
+        <div class="indicators"></div>
         <button class="nav-btn next-btn">›</button>
       </div>
 
@@ -272,7 +299,13 @@
         </div>
         <div class="filter-rating filter-section-border">
           <h5 class="filter-section-header">Rating</h5>
-          <ul class="filter-ul"></ul>
+          <div class="rating-container" id="rating">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
         </div>
         <div class="fitler-price filter-section-border">
           <h5 class="filter-section-header">Price</h5>
@@ -284,10 +317,10 @@
               min="50"
               max="1000"
               step="10"
-              value="150"
+              value="250"
             />
             <div class="price-display">
-              Price: <span id="price-value">150</span>EGP
+              Price: <span id="price-value">250 </span>EGP
             </div>
           </div>
         </div>
@@ -295,65 +328,180 @@
           <h5 class="filter-section-header">City</h5>
           <ul class="filter-ul">
             <li>
-              <span class="a-list-item"
-                ><div>
-                  <input type="checkbox" name="" id="" /><i
-                    class="a-icon a-icon-checkbox"
-                  ></i></div
-              ></span>
+              <span class="a-list-item" id="filter-cairo">
+                <label class="checkbox-label" for="cairo">
+                  <input type="checkbox" name="city" id="cairo" value="true" />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Cairo</span>
+                </label>
+              </span>
             </li>
-            <li></li>
+            <li>
+              <span class="a-list-item" id="filter-alexandria">
+                <label class="checkbox-label" for="alexandria">
+                  <input
+                    type="checkbox"
+                    name="city"
+                    id="alexandria"
+                    value="true"
+                  />
+                  <i class="a-icon a-icon-checkbox"></i>
+                  <span>Alexandria</span>
+                </label>
+              </span>
+            </li>
           </ul>
         </div>
         <div class="filter-days filter-section-border">
           <h5 class="filter-section-header">Days</h5>
-          <ul class="filter-ul"></ul>
+            <ul class="filter-ul">
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="saturday">
+                <input
+                type="checkbox"
+                name="day"
+                id="saturday"
+                value="Saturday"
+                />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Saturday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="sunday"></label>
+                <input type="checkbox" name="day" id="sunday" value="Sunday" />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Sunday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="monday">
+                <input type="checkbox" name="day" id="monday" value="Monday" />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Monday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="tuesday">
+                <input type="checkbox" name="day" id="tuesday" value="Tuesday" />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Tuesday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="wednesday">
+                <input
+                type="checkbox"
+                name="day"
+                id="wednesday"
+                value="Wednesday"
+                />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Wednesday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="thursday">
+                <input
+                type="checkbox"
+                name="day"
+                id="thursday"
+                value="Thursday"
+                />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Thursday</span>
+              </label>
+              </span>
+            </li>
+            <li>
+              <span class="a-list-item">
+              <label class="checkbox-label" for="friday">
+                <input type="checkbox" name="day" id="friday" value="Friday" />
+                <i class="a-icon a-icon-checkbox"></i>
+                <span>Friday</span>
+              </label>
+              </span>
+            </li>
+            </ul>
         </div>
         <div class="filter-hours">
-          <h5 class="filter-section-header">Hours</h5>
-          <ul class="filter-ul"></ul>
+          <h5 class="filter-section-header">Hour</h5>
+          <span class="filter-hour">
+            <input
+              class="col-6"
+              id="filter-hour"
+              type="time"
+              min="00:00"
+              max="23:00"
+              step="3600"
+              class="form-control"
+              value="19:00"
+          /></span>
         </div>
         <!-- <p>Add filters, ads, or any content here.</p> -->
       </aside>
     </div>
-    <div class="indicators"></div>
+
     <div class="field-details-overlay d-none" id="field-details">
       <div class="details-content p-4 rounded shadow bg-white">
         <button class="btn btn-danger btn-sm close-btn">X</button>
         <div id="details-body"></div>
         <hr />
-        <h4>Book Your Slot</h4>
+        <!-- & Booking -->
+        <h4 class="mb-4">Book Your Slot</h4>
         <form id="booking-form">
-          <label>Choose Day:</label>
-          <select id="booking-day" class="form-select mb-2">
-            <option>Saturday</option>
-            <option>Sunday</option>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-          </select>
-
-          <label>From Hour:</label>
-          <select id="booking-start-hour" class="form-select mb-2"></select>
-
-          <label>To Hour:</label>
-          <select id="booking-end-hour" class="form-select mb-2"></select>
-
-          <label>Your Name:</label>
-          <input
-            type="text"
-            id="booking-name"
-            class="form-control mb-2"
-            placeholder="Enter your name"
-          />
+          <!-- ^ choosing date -->
+          <div class="col-12 col-md-6 mb-5 mb-lg-0 col-lg-5">
+            <label for="booking-date" class="">Choose date</label>
+            <input type="date" class="form-control" id="booking-date" />
+          </div>
+          <div class="d-flex mb-5">
+            <!-- ^ choosing from hour  -->
+            <div class="col-5 col-md-5 mb-3 mb-lg-0">
+              <label class="col-12" for="search-from-hour">From</label>
+              <input
+                class="col-6"
+                id="booking-from-hour"
+                type="time"
+                min="00:00"
+                max="23:00"
+                step="3600"
+                class="form-control"
+                value="19:00"
+              />
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <!-- ^ choosing To hour  -->
+            <div class="col-5 col-md-5 mb-3 mb-lg-0">
+              <label class="col-12" for="search-to-hour">To</label>
+              <input
+                class="col-6"
+                id="booking-to-hour"
+                type="time"
+                min="00:00"
+                max="23:00"
+                step="3600"
+                class="form-control"
+                value="20:00"
+              />
+            </div>
+          </div>
 
           <button
             type="button"
             class="btn btn-primary btn-success"
-            id="booking"
-            onclick="submitBooking()"
+            id="book-field"
           >
             Book Now
           </button>
