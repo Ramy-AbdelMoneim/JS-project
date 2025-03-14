@@ -12,9 +12,142 @@
     />
     <link rel="stylesheet" href="fonts/remixicon.css" />
     <link rel="stylesheet" href="../CSS/Profile.css">
-   
+    <style>
+      body {
+        padding-top: 70px; /* Adjust this value if your navbar height is different */
+      }
+      .navbar-custom {
+        background-image: url(../Images/grass.avif);
+        color: white;
+      }
+      .navbar-nav .nav-item .nav-link {
+        color: white !important;
+      }
+      .navbar-nav .nav-item .nav-link:hover{
+        color: wheat !important;
+      }
+      .offcanvas .nav-item .nav-link {
+        color: black !important;
+      }
+      
+      .offcanvas .nav-item .nav-link:hover{
+        color: wheat !important;
+      }
+    </style>
   </head>
   <body>
+    <!-- Navbar from About Page -->
+    <div class="row flex-row d-flex justify-content-evenly w-100 header-nav fixed-top navbar-custom">
+      <div class="col-2 p-3 d-flex justify-content-start l-0 navbar">
+        <h1>logo</h1>
+      </div>
+      <div class="col-9 d-flex justify-content-end">
+        <nav class="navbar border-body" data-bs-theme="white">
+          <div class="container-fluid d-flex justify-content-end">
+            <div
+              class="d-flex d-none d-md-block w-100"
+              id="navbarNavDropdown"
+            >
+              <ul class="navbar-nav d-flex flex-row gap-5" id="navbarUl">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./Home.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link font-weight-bold" href="./ContactUs.html"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="nav-item dropdown profile nav-Anchor d-flex align-items-center d-none">
+                  <img
+                  alt="profilepic"
+                  class="logo-img mx-1 profilepic"
+                />
+                <a class="nav-link dropdown-toggle usrname" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
+                  
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="DropDownUl">
+                  <li><a class="dropdown-item Logout" href="#" >Logout</a></li>
+                </ul>
+              </li>
+               
+              </ul>
+            </div>
+          </div>
+          <button
+            class="navbar-toggler d-block d-md-none nav-ham"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- ^ nav small screens -->
+          <div
+            class="offcanvas offcanvas-end bg-opacity-100 w-50"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">logo</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul
+                class="navbar-nav justify-content-end flex-grow-1"
+                id="hamUl"
+              >
+                <li class="nav-item font-weight-bold d-none profile">
+                  <a class="nav-link" href="#" id="usrname/img">
+                    <img
+                    alt="profilepic"
+                    class="logo-img mx-1 profilepic"
+                  />
+                    <span class="usrname"></span>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./Home.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./ContactUs.html">Contact Us</a>
+                </li>
+                <li class="nav-item d-none Logout">
+                  <a class="nav-link" href="#">Logout</a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End of Navbar -->
+
     <div class="container">
       <header>
         <div class="brandLogo">
@@ -141,20 +274,6 @@
             <span class="Upcoming-Status">Pending</span>
             <button class="cancel-btn">Cancel</button>
           </div>
-          <div class="card">
-            <div class="d-flex align-items-center">
-              <img src="../Images/about-slide-1-2.jpg" alt="Image" class="m-3"/>
-              <div class="p-3">
-                <h5 class="card-title mb-1">Name: Port-Sport</h5>
-                <p class="mb-1">Date: 01/01/2023</p>
-                <p class="mb-1">From: 8:00</p>
-                <p class="mb-1">To: 10:00</p>
-                <p class="mb-0">Total Price: $200</p>
-              </div>
-            </div>
-            <span class="Upcoming-Status">Pending</span>
-            <button class="cancel-btn">Cancel</button>
-          </div>
           <div class="card position-relative">
             <div class="d-flex align-items-center">
               <img src="../Images/about-slide-1-2.jpg" alt="Image" class="m-3"/>
@@ -173,6 +292,9 @@
         </div>
       </section>
     </div>
+
+    
+
     <script src="../Scripts/profile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>

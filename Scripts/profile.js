@@ -1,3 +1,5 @@
+
+
 function showFinishedBooking() {
     document.getElementById("finishedBooking").style.display = "block";
     document.getElementById("UpcomingBooking").style.display = "none";
@@ -23,3 +25,5 @@ function showFinishedBooking() {
       card.remove(); 
     });
   });
+
+  
