@@ -21,6 +21,10 @@ formsubmit.onsubmit = function (event) {
                 // console.log("Login Successful")
                 document.cookie = `usrname=${usersdata[i].Username}`
                 localStorage.setItem("profilepic",usersdata[i].Profile)
+                localStorage.setItem("birthdate",usersdata[i].birthdate)
+                localStorage.setItem("phonenum",usersdata[i].phonenum)
+                localStorage.setItem("username",usersdata[i].Username)
+                localStorage.setItem("Email",usersdata[i].Email)
                 usrname = usersdata[i].Username;
                 login = true;
                 break;

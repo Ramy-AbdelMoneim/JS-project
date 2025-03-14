@@ -29,4 +29,12 @@ function showFinishedBooking() {
   
 
   let profile=document.getElementById("profile")
+  let Name=document.getElementById("Name")
+  let birthdate=document.getElementById("Birthdate")
+  let Email=document.getElementById("Email")
+  let phone=document.getElementById("phone")
   profile.src=localStorage.getItem("profilepic")
+  Name.innerHTML=localStorage.getItem("username")
+  birthdate.innerHTML=localStorage.getItem("birthdate")
+  phone.innerHTML=localStorage.getItem("phonenum")
+  Email.innerHTML=localStorage.getItem("Email")

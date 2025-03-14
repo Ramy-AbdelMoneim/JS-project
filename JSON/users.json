@@ -2,34 +2,42 @@
     "ramy@gmail.com" :
 		{
             "Username": "Ramy",
-			"Email" : "Ramy@gmail.com",
+			"Email" : "ramy@gmail.com",
 			"Password" : "123",
-			"Profile": "../Images/ramy.JPG"
+			"Profile": "../Images/ramy.JPG",
+			"birthdate":"24/4/2002",
+			"phonenum":"01000648408"
         },
 	"kero@gmail.com" : 
 		{
             "Username": "Kero",
-			"Email" : "Kero@gmail.com",
+			"Email" : "kero@gmail.com",
 			"Password" : "123",
-			"Profile": "../Images/kiro.JPEG"
+			"Profile": "../Images/kiro.JPEG",
+			"birthdate":"15/1/2001",
+			"phonenum":"01278683382"
 
         }
 	,
 	"friga@gmail.com" : 
 		{
             "Username": "Omar",
-			"Email" : "Friga@gmail.com",
+			"Email" : "friga@gmail.com",
 			"Password" : "123",
-			"Profile": "../Images/omar.JPEG"
+			"Profile": "../Images/omar.JPEG",
+			"birthdate":"12/7/2000",
+			"phonenum":"01111047751"
 
 		}
 	,
 	"john@gmail.com" :
 		{
             "Username": "John",
-			"Email" : "John@gmail.com",
+			"Email" : "john@gmail.com",
 			"Password" : "123",
-			"Profile": "../Images/john.JPG"
+			"Profile": "../Images/john.JPG",
+			"birthdate":"29/4/2001",
+			"phonenum":"01029182174"
 
 		}
 }
