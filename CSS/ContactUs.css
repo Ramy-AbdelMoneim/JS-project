@@ -120,3 +120,9 @@
   {
     color:wheat;
   }
+  .qoute
+  {
+    background-color: rgba(20, 80, 40, 0.4);
+  border-radius: 2rem;
+    text-shadow: 0.03rem 0.03rem 2rem rgb(83, 83, 83);
+  }

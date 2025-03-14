@@ -29,8 +29,8 @@ header {
 }
 #navbarUl * {
   color: #eff5ff ;
-  font-size: 1.2rem;
-  font-weight: 500;
+  /* font-size: 1.2rem; */
+  /* font-weight: 500; */
 }
 #navbarUl li:hover > a,
 #navbarUl li:hover > a span {
@@ -58,7 +58,7 @@ header {
   font-size: 1rem;
 }
 .main-desc {
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin: 0;
   /* background-image: linear-gradient(
     rgba(255, 255, 255, 0.5),

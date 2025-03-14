@@ -27,3 +27,6 @@ function showFinishedBooking() {
   });
 
   
+
+  let profile=document.getElementById("profile")
+  profile.src=localStorage.getItem("profilepic")
